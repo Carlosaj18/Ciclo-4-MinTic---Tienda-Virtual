@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">ProyectAcuenta</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for splash screen -->
+    <string name="splash_animation">splashAnimation</string>
+
+    <!-- Strings used for ingreso -->
+    <string name="login">Ingresar</string>
+    <string name="registro">Registro</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="loging_buttom">Login Buttom</string>
+    <string name="login_label">INICIAR SESION</string>
+    <string name="login_log">Login Logo</string>
+
+    <!-- String for login -->
+    <string name="olvidasteContra">Olvide Contrasena</string>
+
+    <!-- Strings used for loggin -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">¡Hola!</string>
+    <string name="indicaciones">Para iniciar solo debes ingresar tu correo electrónico y contraseña</string>
+    <string name="text_view_olvidaste_contraseña">¿olvidaste tu contraseña? </string>
+    <string name="text_view_cuentaNueva">¿Aún no tienes cuenta?</string>
+    <string name="text_view_olvidoPassword">Recuperar contraseña</string>
+    <string name="text_view_IndicacionesCorreo">Enviaremos un código de confirmación al correo con el que te registraste.</string>
+    <string name="confirmacion_label">Confirmar</string>
+    <string name="registroCuenta">Registro</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="CC">CC</string>
+    <string name="fecha">Fecha de Nacimiento</string>
+    <string name="NumeroDocumento">Número de Documento</string>
+    <string name="Año">Año</string>
+    <string name="Mes">Mes</string>
+    <string name="Dia">Dia</string>
+    <string name="celular">Celular</string>
+    <string name="email">Email</string>
+    <string name="Confirmar">Confirmar</string>
+    <string name="Bienvenido">Bienvenido</string>
+    <string name="Carlos">Carlos</string>
+    <string name="Tienda">Tienda Seleccionada</string>
+    <string name="username">Andres Camilo Portilla</string>
+    <string name="phone">3187936659</string>
+    <string name="mail">Mail</string>
+    <string name="mail1">cjaramilloportilla@gmail.com</string>
+    <string name="direccion">Diagonal 91 #4-20</string>
+    <string name="ubicacion">Abrir ubicación</string>
+    <string name="home_titile"> Home</string>
+
+
+</resources>

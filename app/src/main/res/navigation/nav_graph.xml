@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ingresoFragment">
+    <fragment
+        android:id="@+id/ingresoFragment"
+        android:name="com.example.proyectacuenta.IngresoFragment"
+        android:label="fragment_ingreso"
+        tools:layout="@layout/fragment_ingreso" >
+        <action
+            android:id="@+id/action_ingresoFragment_to_loginAppFragment"
+            app:destination="@id/loginAppFragment" />
+        <action
+            android:id="@+id/action_ingresoFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginAppFragment"
+        android:name="com.example.proyectacuenta.LoginAppFragment"
+        android:label="fragment_login_app"
+        tools:layout="@layout/fragment_login_app" >
+        <action
+            android:id="@+id/action_loginAppFragment_to_olvidoPasswordFragment2"
+            app:destination="@id/olvidoPasswordFragment2" />
+        <action
+            android:id="@+id/action_loginAppFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/olvidoPasswordFragment2"
+        android:name="com.example.proyectacuenta.OlvidoPasswordFragment"
+        android:label="OlvidoPasswordFragment" >
+        <action
+            android:id="@+id/action_olvidoPasswordFragment2_to_loginAppFragment"
+            app:destination="@id/loginAppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.proyectacuenta.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_loginAppFragment"
+            app:destination="@id/loginAppFragment" />
+    </fragment>
+</navigation>

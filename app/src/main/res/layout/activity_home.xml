@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="1dp"
+        android:src="@drawable/logo_acuenta2"
+        android:layout_marginStart="80dp"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/Carlos"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/saludo"
+        />
+    <TextView
+        android:id="@+id/saludo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="90dp"
+        android:text="@string/Bienvenido"
+        android:textColor="@color/yellow"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/busqueda"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saludo"
+        android:layout_marginHorizontal="35dp"
+
+        android:hint="@string/Tienda"
+
+        app:boxBackgroundMode="outline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+        app:helperTextTextColor="@color/design_default_color_error"
+        app:startIconDrawable="@drawable/ic_baseline_find_in_page_24"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/username"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintStart_toStartOf="@id/iconUser"
+        app:layout_constraintTop_toBottomOf="@id/busqueda"
+
+        />
+
+    <ImageView
+        android:id="@+id/iconUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintTop_toBottomOf="@id/busqueda"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="25dp"
+        />
+
+    <TextView
+        android:id="@+id/telefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/phone"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintStart_toStartOf="@id/iconPhone"
+        app:layout_constraintTop_toBottomOf="@id/usuario"
+
+        />
+
+    <ImageView
+        android:id="@+id/iconPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_local_phone_24"
+        app:layout_constraintTop_toBottomOf="@id/usuario"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="25dp"
+        />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/mail1"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintStart_toStartOf="@id/iconMail"
+        app:layout_constraintTop_toBottomOf="@id/telefono"
+
+        />
+
+    <ImageView
+        android:id="@+id/iconMail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_mail_24"
+        app:layout_constraintTop_toBottomOf="@id/telefono"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="25dp"
+        />
+
+    <TextView
+        android:id="@+id/direccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/direccion"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintStart_toStartOf="@id/iconDireccion"
+        app:layout_constraintTop_toBottomOf="@id/mail"
+
+        />
+
+    <ImageView
+        android:id="@+id/iconDireccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_location_on_24"
+        app:layout_constraintTop_toBottomOf="@id/mail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="25dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/comentarios"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/busqueda"
+        app:layout_constraintStart_toStartOf="@id/usuario"
+        android:layout_marginStart="200dp"
+        android:text="Comentarios"
+        android:textAppearance="@style/Theme.ProyectAcuenta.AppBarOverlay"
+        android:textColor="@color/green"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_baseline_comment_24"
+        app:iconTint="@color/green"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/locationButtom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/direccion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="170dp"
+        android:text="@string/ubicacion"
+        android:textColor="@color/black"
+        android:layout_marginVertical="16dp"
+        app:cornerRadius="25dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/icon_size"
+        app:layout_constraintTop_toBottomOf="@id/locationButtom"
+        android:layout_marginVertical="20dp"
+        android:src="@drawable/googlephoto"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:scaleType="centerCrop"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

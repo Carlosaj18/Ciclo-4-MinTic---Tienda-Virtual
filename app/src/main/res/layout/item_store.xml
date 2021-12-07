@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="16dp"
+    android:layout_margin="8dp"
+    app:shapeAppearanceOverlay="@style/roundedCard"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/default_margin"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/item_store_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="@dimen/default_margin"
+            tools:src="@mipmap/ic_launcher"
+            />
+
+        <TextView
+            android:id="@+id/item_store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/item_store_photo"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/default_margin"
+            tools:text="Mi tienda Agil"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/item_description_store_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/item_store_photo"
+            app:layout_constraintTop_toBottomOf="@id/item_store_name"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            tools:text="La descripción de productos es el elemento vital en un sitio web que tiene por objetivo atraer, informar y convencer al consumidor de comprar un artículo. Este apartado se conforma por las características, funciones y valores por las que el producto se destaca: qué lo hace diferente y por qué da valor al usuario"
+
+            />
+
+        <TextView
+            android:id="@+id/item_store_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/item_store_photo"
+            app:layout_constraintTop_toBottomOf="@id/item_description_store_message"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            tools:text="318 7936659"
+            />
+
+        <TextView
+            android:id="@+id/item_comment_direccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/item_store_photo"
+            app:layout_constraintTop_toBottomOf="@id/item_store_phone"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            tools:text="Diagonal 91 No. 4-20"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

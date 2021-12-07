@@ -1,4 +1,4 @@
-package com.example.proyectacuenta
+package com.example.proyectacuenta.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.FragmentIngresoBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [IngresoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class IngresoFragment : Fragment() {
 
     private var _binding: FragmentIngresoBinding? = null

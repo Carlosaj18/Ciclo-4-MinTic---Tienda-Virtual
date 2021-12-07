@@ -1,4 +1,5 @@
 <resources>
+    <!-- String for App -->
     <string name="app_name">ProyectAcuenta</string>
     <string name="action_settings">Settings</string>
 
@@ -23,11 +24,15 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- String used for ProductDetail -->
+    <string name="product_detail_title">Detalle del producto</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello">¡Hola!</string>
     <string name="indicaciones">Para iniciar solo debes ingresar tu correo electrónico y contraseña</string>
     <string name="text_view_olvidaste_contraseña">¿olvidaste tu contraseña? </string>
-    <string name="text_view_cuentaNueva">¿Aún no tienes cuenta?</string>
+    <string name="text_view_cuentaNueva">¿Aún no tienes cuenta? Da click</string>
     <string name="text_view_olvidoPassword">Recuperar contraseña</string>
     <string name="text_view_IndicacionesCorreo">Enviaremos un código de confirmación al correo con el que te registraste.</string>
     <string name="confirmacion_label">Confirmar</string>
@@ -47,13 +52,58 @@
     <string name="Bienvenido">Bienvenido</string>
     <string name="Carlos">Carlos</string>
     <string name="Tienda">Tienda Seleccionada</string>
+    <string name="Productos">Producto Seleccionado</string>
     <string name="username">Andres Camilo Portilla</string>
     <string name="phone">3187936659</string>
     <string name="mail">Mail</string>
     <string name="mail1">cjaramilloportilla@gmail.com</string>
     <string name="direccion">Diagonal 91 #4-20</string>
     <string name="ubicacion">Abrir ubicación</string>
+    <string name="comment_store">Comment\'s Store </string>
     <string name="home_titile"> Home</string>
-
-
+    <string name="tienda_name">Vista Tienda </string>
+    <string name="product_title"> Mis productos</string>
+    <string name="comment_title"> Comentarios </string>
+    <string name="profile_title"> Mi perfil </string>
+    <string name="home_label">Home</string>
+    <string name="product_label">Productos</string>
+    <string name="comment_label">Comentarios</string>
+    <string name="profil_label">Perfil</string>
+    <string name="Comentario">Deja un Comentario</string>
+    <string name="Nombre">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="NombreDelUsuario">Camila Perez</string>
+    <string name="UltimaConexion">1 mes atras</string>
+    <string name="enviar">Enviar</string>
+    <string name="Asunto1">Buen servicio</string>
+    <string name="NombreDelUsuario2">Camilo Suarez</string>
+    <string name="UltimaConexion2">1 año atras</string>
+    <string name="Asunto2">Producto vencido</string>
+    <string name="Comentario1">La rapidez con la cual le ayudan a uno  con los  iconvenientes es excelente, además del trato,  es un elementos bastante diferencializador</string>
+    <string name="Comentario2">Realice una compra de leche, sin embargo estas llegaron vencidas y cuando me comunique para  expresarlo le colocaron muchos inconvenientes y decide no volver a comprar acá</string>
+    <string name="perfilTendero">Perfil Tendero</string>
+    <string name="nombrePerfilTendero">Administrador</string>
+    <string name="EditarImagen">Editar Imagen</string>
+    <string name="NombreUsuario">Nombre de Usuario</string>
+    <string name="telefono">Telefono</string>
+    <string name="labelDireccion">Dirección</string>
+    <string name="labelDescripcion">Descripcion</string>
+    <string name="editar">Editar Productos</string>
+    <string name="labelagregarProducto">Agregar Productos</string>
+    <string name="guardar">Guardar</string>
+    <string name="title_activity_example">example</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="Tiendas_por_ubicacion">Selecciona tu tienda</string>
+    <string name="Categorias">Categorias</string>
+    <string name="Tiendas">Tiendas</string>
+    <string name="Tiendas_zona">Tiendas en la Zona</string>
+    <string name="Tenderos">Tenderos</string>
+    <string name="Precios">Precios</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="CommentsDetails">Comments\s Details</string>
+    <string name="Password">Password</string>
+    <string name="Logout">Logout</string>
 </resources>

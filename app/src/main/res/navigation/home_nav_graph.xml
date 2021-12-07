@@ -3,11 +3,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav_graph"
-    app:startDestination="@id/homeFragment">
-
+    app:startDestination="@id/homeStoreFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.proyectacuenta.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.example.proyectacuenta.ui.fragments.HomeFragment"
+        android:label="@string/tienda_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_commentsStoreFragment"
+            app:destination="@id/commentsStoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.ProductFragment"
+        android:label="@string/product_title"
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_productFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.CommentFragment"
+        android:label="@string/comment_title"
+        tools:layout="@layout/fragment_comment" >
+        <action
+            android:id="@+id/action_commentFragment_to_commentsDetailFragment"
+            app:destination="@id/commentsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.ProfileTenderoFragment"
+        android:label="@string/profile_title"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.ProductDetailFragment"
+        android:label="@string/product_detail_title"
+        tools:layout="@layout/fragment_product_detail" />
+    <fragment
+        android:id="@+id/commentsStoreFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.CommentsStoreFragment"
+        android:label="@string/comment_store"
+        tools:layout="@layout/fragment_comments_store" />
+    <fragment
+        android:id="@+id/homeStoreFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.HomeStoreFragment"
+        android:label="@string/Tiendas_por_ubicacion"
+        tools:layout="@layout/fragment_home_store" >
+        <action
+            android:id="@+id/action_homeStoreFragment_to_storeFragment"
+            app:destination="@id/storeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.StoreFragment"
+        android:label="@string/Tiendas_zona"
+        tools:layout="@layout/fragment_store">
+        <action
+            android:id="@+id/action_storeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsDetailFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.CommentsDetailFragment"
+        android:label="@string/CommentsDetails"
+        tools:layout="@layout/fragment_comments_detail" />
 </navigation>

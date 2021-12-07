@@ -11,13 +11,74 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Font lato -->
         <item name="android:fontFamily">@font/lato</item>
+        <!-- background acuenta <item name="android:background">@drawable/bgacuenta</item>-->
+        <!-- Custom Style -->
+        <item name="textAppearanceHeadline1">@style/Theme.ProyectAcuenta.HeadLine1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/Theme.ProyectAcuenta.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/Theme.ProyectAcuenta.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
+        <!-- -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Head Line -->
+    <style name="Theme.ProyectAcuenta.HeadLine1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">25sp</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <!-- Subtitle Line -->
+    <style name="Theme.ProyectAcuenta.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/lato</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Body Line -->
+    <style name="Theme.ProyectAcuenta.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/lato</item>
+    </style>
+
+    <!-- Style Titles -->
+    <style name="title">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Bottom Line -->
+    <style name="Button.Green" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/green</item>
     </style>
 
     <style name="Theme.ProyectAcuenta.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Image Style -->
+    <style name="roundedImage" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="roundedCard" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+
     </style>
 
     <style name="Theme.ProyectAcuenta.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

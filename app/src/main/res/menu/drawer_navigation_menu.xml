@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@id/homeFragment"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/home_label"
+            />
+
+        <item
+            android:id="@id/commentFragment"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_comment_24"
+            android:title="@string/comment_label"
+            />
+
+
+        <item
+            android:id="@id/profileFragment"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="@string/profil_label"
+            />
+    </group>
+
+    <item android:title="Productos">
+        <menu>
+            <item
+                android:id="@id/productFragment"
+                android:enabled="true"
+                android:icon="@drawable/ic_productos"
+                android:title="@string/Categorias"
+                />
+
+            <item
+                android:id="@id/productFragment"
+                android:enabled="true"
+                android:icon="@drawable/ic_productos"
+                android:title="@string/Precios"
+                />
+
+            <item
+                android:id="@id/productFragment"
+                android:enabled="true"
+                android:icon="@drawable/ic_productos"
+                android:title="@string/Tiendas"
+                />
+
+            <item
+                android:id="@id/productFragment"
+                android:enabled="true"
+                android:icon="@drawable/ic_productos"
+                android:title="@string/Tenderos"
+                />
+
+        </menu>
+    </item>
+
+</menu>

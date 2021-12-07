@@ -4,484 +4,1067 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SignupFragment">
+    tools:context=".ui.fragments.SignupFragment">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        app:layout_constraintStart_toStartOf="parent"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginVertical="1dp"
-        android:src="@drawable/logo_acuenta2"
-        android:layout_marginStart="80dp"
-        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        />
-
-    <com.google.android.material.textview.MaterialTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/registroCuenta"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/registro"
-        android:textColor="@color/yellow"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
-
-    <com.google.android.material.textview.MaterialTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/fechaNacimiento"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="300dp"
-        android:text="@string/fecha"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <com.google.android.material.textview.MaterialTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/text_view_cuentaNueva"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="590dp"
-        android:text="¿Ya tienes cuenta?"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nombres"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registroCuenta"
-        app:layout_constraintBottom_toTopOf="@id/Apellidos"
-        android:layout_marginHorizontal="@dimen/default_margin"
-
-        android:hint="@string/nombres"
-        android:layout_marginVertical="1dp"
-        app:layout_constraintVertical_chainStyle="packed"
-
-        app:boxBackgroundMode="outline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
-
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Apellidos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombres"
-        android:layout_marginHorizontal="@dimen/default_margin"
-
-        android:hint="@string/apellidos"
-        android:layout_marginVertical="1dp"
-        app:layout_constraintVertical_chainStyle="packed"
-
-        app:boxBackgroundMode="outline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
-
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tipoDocumento"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:hint="@string/CC"
-
-        app:boxBackgroundMode="outline"
-
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:helperTextEnabled="false"
-        app:helperTextTextColor="@color/design_default_color_error"
-
-        app:layout_constraintTop_toBottomOf="@id/Apellidos"
-        app:layout_constraintEnd_toStartOf="@id/documentoIdentidad"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/documentoIdentidad"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/default_margin"
-        android:layout_marginVertical="230dp"
-        android:hint="@string/NumeroDocumento"
-        app:boxBackgroundMode="outline"
-
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:layout_constraintStart_toEndOf="@id/tipoDocumento"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-
-        app:layout_constraintVertical_chainStyle="packed">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- TEXTO -->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/anualidad"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:hint="@string/Año"
-
-        app:boxBackgroundMode="outline"
-
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:helperTextEnabled="false"
-        app:helperTextTextColor="@color/design_default_color_error"
-
-        app:layout_constraintTop_toBottomOf="@id/fechaNacimiento"
-        app:layout_constraintEnd_toStartOf="@id/mes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mes"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginVertical="320dp"
-        android:hint="@string/Mes"
-        app:boxBackgroundMode="outline"
-
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:layout_constraintStart_toEndOf="@id/anualidad"
-        app:layout_constraintEnd_toEndOf="@id/guideline"
-
-        app:layout_constraintTop_toTopOf="parent"
-
-        app:layout_constraintVertical_chainStyle="packed">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dia"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginVertical="320dp"
-        android:hint="@string/Dia"
-        app:boxBackgroundMode="outline"
-
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:layout_constraintStart_toEndOf="@id/mes"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/celular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/anualidad"
-        android:layout_marginHorizontal="@dimen/default_margin"
-
-        android:hint="@string/celular"
-        android:layout_marginVertical="1dp"
-        app:layout_constraintVertical_chainStyle="packed"
-
-        app:boxBackgroundMode="outline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:startIconDrawable="@drawable/ic_baseline_local_phone_24"
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/celular"
-        android:layout_marginHorizontal="@dimen/default_margin"
-
-        android:hint="@string/email"
-        android:layout_marginVertical="1dp"
-        app:layout_constraintVertical_chainStyle="packed"
-
-        app:boxBackgroundMode="outline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-
-        app:helperTextTextColor="@color/design_default_color_error"
-        app:counterEnabled="false"
-        app:counterMaxLength="10"
-
-        app:endIconMode="clear_text"
-        app:startIconDrawable="@drawable/ic_baseline_mail_24"
-
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/registro"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginVertical="135dp"
-        android:text="@string/Confirmar"
-        android:textColor="@color/black"
-
-        app:cornerRadius="25dp"
-        android:textStyle="bold"
-        android:textSize="20dp"
-
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/IniciarSesion"
-        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/text_view_cuentaNueva"
-        app:layout_constraintEnd_toEndOf="@id/guideline4"
-        android:text="Inicia sesión"
-        android:textAppearance="@style/Theme.ProyectAcuenta.AppBarOverlay"
-        android:textColor="@color/green"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:icon="@drawable/ic_baseline_account_circle_24"
-        app:iconTint="@color/green"
-
-        />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.65" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".04" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".68" />
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginVertical="1dp"
+                android:src="@drawable/logo_acuenta2"
+                android:layout_marginStart="80dp"
+                android:scaleType="centerCrop"
+
+                />
+
+            <TextView
+                android:id="@+id/registroCuenta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/registro"
+                android:textColor="@color/yellow"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/rol_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/registroCuenta"
+                app:layout_constraintBottom_toTopOf="@id/radio_group"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="10dp"
+                android:text="Selecciona un Rol"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rol_user"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                >
+
+                <RadioButton
+                    android:id="@+id/register_rol_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cliente"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/register_rol_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tendero"
+                    />
+
+            </RadioGroup>
+
+            <!-- Cliente View-->
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/register_scrolview_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                app:layout_constraintTop_toBottomOf="@id/radio_group"
+                app:layout_constraintBottom_toTopOf="@id/registro">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nombres_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/apellidos_layout"
+                android:layout_marginHorizontal="@dimen/default_margin"
+
+                android:hint="@string/nombres"
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nombres_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/apellidos_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nombres_layout"
+                android:layout_marginHorizontal="@dimen/default_margin"
+
+                android:hint="@string/apellidos"
+                app:layout_constraintVertical_chainStyle="packed"
+
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/apellidos_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipo_documento"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:hint="@string/CC"
+
+                app:boxBackgroundMode="outline"
+
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:helperTextEnabled="false"
+                app:helperTextTextColor="@color/design_default_color_error"
+
+                app:layout_constraintTop_toBottomOf="@id/apellidos_layout"
+                app:layout_constraintBottom_toTopOf="@id/fecha_nacimiento"
+                app:layout_constraintEnd_toStartOf="@id/documento_identidad_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_bias="1"
+
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/documento_identidad_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+
+                android:hint="@string/NumeroDocumento"
+                app:boxBackgroundMode="outline"
+
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:layout_constraintStart_toEndOf="@id/tipo_documento"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/apellidos_layout"
+                app:layout_constraintBottom_toTopOf="@id/fecha_nacimiento"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/documento_identidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/fecha_nacimiento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:text="@string/fecha"
+                android:textColor="@color/black"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/apellidos_layout"
+                app:layout_constraintBottom_toTopOf="@id/anualidad_layout"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/anualidad_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:hint="@string/Año"
+
+                app:boxBackgroundMode="outline"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+
+
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:helperTextEnabled="false"
+                app:helperTextTextColor="@color/design_default_color_error"
+
+                app:layout_constraintTop_toBottomOf="@id/fecha_nacimiento"
+                app:layout_constraintBottom_toTopOf="@id/celular_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/mes_layout"
+                app:layout_constraintHorizontal_chainStyle="packed"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/anualidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mes_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:hint="@string/Mes"
+                app:boxBackgroundMode="outline"
+
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:layout_constraintTop_toBottomOf="@id/fecha_nacimiento"
+                app:layout_constraintBottom_toTopOf="@id/celular_layout"
+                app:layout_constraintStart_toEndOf="@id/anualidad_layout"
+                app:layout_constraintEnd_toStartOf="@id/dia_layout"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dia_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:hint="@string/Dia"
+                app:boxBackgroundMode="outline"
+
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:layout_constraintStart_toEndOf="@id/mes_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fecha_nacimiento"
+                app:layout_constraintBottom_toTopOf="@id/celular_layout"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/celular_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/anualidad_layout"
+                app:layout_constraintBottom_toTopOf="@id/email_layout"
+                android:layout_marginHorizontal="@dimen/default_margin"
+
+                android:hint="@string/celular"
+
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_baseline_local_phone_24"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/celular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/celular_layout"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:hint="@string/email"
+
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                app:helperTextTextColor="@color/design_default_color_error"
+                app:counterEnabled="false"
+                app:counterMaxLength="10"
+
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_baseline_mail_24"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/password_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/email_layout"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="@string/Password"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!-- Tendero View -->
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/register_scrolview_tendero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                app:layout_constraintTop_toBottomOf="@id/radio_group"
+                app:layout_constraintBottom_toTopOf="@id/registro">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nombres_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/contact_name_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+
+                        android:hint="Nombre Tienda"
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nombres_input_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/contact_name_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nombres_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+
+                        android:hint="Nombre Contacto"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/contact_name_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tipo_documento_store"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_margin"
+                        android:hint="NIT"
+
+                        app:boxBackgroundMode="outline"
+
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:helperTextEnabled="false"
+                        app:helperTextTextColor="@color/design_default_color_error"
+
+                        app:layout_constraintTop_toBottomOf="@id/contact_name_layout_store"
+                        app:layout_constraintBottom_toTopOf="@id/fecha_constitucion"
+                        app:layout_constraintEnd_toStartOf="@id/documento_identidad_layout_store"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintHorizontal_bias="1"
+
+                        >
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/documento_identidad_layout_store"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/default_margin"
+
+                        android:hint="NIT de la empresa"
+                        app:boxBackgroundMode="outline"
+
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:layout_constraintStart_toEndOf="@id/tipo_documento_store"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/contact_name_layout_store"
+                        app:layout_constraintBottom_toTopOf="@id/fecha_constitucion"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/documento_identidad_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/fecha_constitucion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:text="Fecha de Constitucion"
+                        android:textColor="@color/black"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/contact_name_layout_store"
+                        app:layout_constraintBottom_toTopOf="@id/anualidad_layout_store"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/anualidad_layout_store"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_margin"
+                        android:hint="@string/Año"
+
+                        app:boxBackgroundMode="outline"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+
+
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:helperTextEnabled="false"
+                        app:helperTextTextColor="@color/design_default_color_error"
+
+                        app:layout_constraintTop_toBottomOf="@id/fecha_constitucion"
+                        app:layout_constraintBottom_toTopOf="@id/celular_layout_store"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/mes_layout_store"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/anualidad_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/mes_layout_store"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="@string/Mes"
+                        app:boxBackgroundMode="outline"
+
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:layout_constraintTop_toBottomOf="@id/fecha_constitucion"
+                        app:layout_constraintBottom_toTopOf="@id/celular_layout_store"
+                        app:layout_constraintStart_toEndOf="@id/anualidad_layout_store"
+                        app:layout_constraintEnd_toStartOf="@id/dia_layout_store"
+                        >
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mes_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dia_layout_store"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/default_margin"
+                        android:hint="@string/Dia"
+                        app:boxBackgroundMode="outline"
+
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:layout_constraintStart_toEndOf="@id/mes_layout_store"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fecha_constitucion"
+                        app:layout_constraintBottom_toTopOf="@id/celular_layout_store"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dia_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/celular_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/anualidad_layout_store"
+                        app:layout_constraintBottom_toTopOf="@id/email_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+
+                        android:hint="@string/celular"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_local_phone_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/celular_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/email_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/celular_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="@string/email"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_mail_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email_user_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/productos_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/email_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="Ingresa la URL del producto"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/producto"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/producto_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/descripcion_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/productos_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="Ingresa la descripcion del producto"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/descripcion"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/description_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ciudad_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/descripcion_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="Ingresa la ciudad"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/apartment"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ciudad_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/direccion_layout_store"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ciudad_layout_store"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:hint="Ingresa su direccion"
+
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/descripcion_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/cuenta_nueva"
+                android:layout_marginHorizontal="50dp"
+                android:text="@string/Confirmar"
+                android:textColor="@color/black"
+
+                app:cornerRadius="25dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+
+                />
+
+            <TextView
+                android:id="@+id/cuenta_nueva"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="¿Ya tienes cuenta?"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registro"
+                android:gravity="center"
+
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/IniciarSesion"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/default_margin_vertical"
+                app:layout_constraintTop_toBottomOf="@id/cuenta_nueva"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="130dp"
+                android:text="Inicia sesión"
+                android:textAppearance="@style/Theme.ProyectAcuenta.AppBarOverlay"
+                android:textColor="@color/green"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_baseline_account_circle_24"
+                app:iconTint="@color/green"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -515,7 +1098,9 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ellipse3" />
+        android:src="@drawable/ellipse3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -526,9 +1111,6 @@
         android:src="@drawable/ellipse4"
         tools:layout_editor_absoluteX="339dp"
         tools:layout_editor_absoluteY="250dp" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

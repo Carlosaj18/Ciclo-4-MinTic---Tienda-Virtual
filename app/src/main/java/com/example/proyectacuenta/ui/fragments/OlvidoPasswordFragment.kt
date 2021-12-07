@@ -1,4 +1,4 @@
-package com.example.proyectacuenta
+package com.example.proyectacuenta.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.proyectacuenta.databinding.FragmentLoginAppBinding
+import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.FragmentOlvidoPasswordBinding
 
 class OlvidoPasswordFragment : Fragment() {

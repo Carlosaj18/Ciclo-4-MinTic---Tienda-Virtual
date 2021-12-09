@@ -21,4 +21,4 @@ data class StoreInfo(
     var lng: Double? = null
 ) {
     constructor(): this("", "", "", "", "", "", "", "", "", "")
-}
+  }

@@ -12,7 +12,7 @@ data class Comment(
     @PrimaryKey var id: String = "",
     var description: String?,
     var author: String?,
-    var image: String?,
+    var image: String = "",
     var date: String?,
     var asunto: String?
 ) {

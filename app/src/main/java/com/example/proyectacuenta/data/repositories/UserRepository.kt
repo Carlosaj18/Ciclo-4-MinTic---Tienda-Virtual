@@ -1,16 +1,20 @@
 package com.example.proyectacuenta.data.repositories
 
 import android.graphics.Bitmap
+import com.example.proyectacuenta.utils.Constans
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
 
-class UserRepository(private val dataSource: FirebaseAuth, private val dataSourceStorage: StorageReference ) {
+class UserRepository(private val dataSource: FirebaseAuth,
+                     private val dataSourceStorage: StorageReference,
+                     private val dataFireStore: FirebaseFirestore
+) {
 
     // Metodos para el login
-
     // Metodo para saber si esta logeado
     suspend fun loggedIn(): FirebaseUser?{
         // Si esta logeado es diferente a null
@@ -18,7 +22,9 @@ class UserRepository(private val dataSource: FirebaseAuth, private val dataSourc
     }
 
     // Metodo para hacer el signup
-    suspend fun signUp(email: String, name: String, password: String): FirebaseUser? {
+    // suspend fun signUp(email: String, name: String, password: String): FirebaseUser? {
+    suspend fun signUp(name: String, apellido: String, identificacion: String, celular: String,
+                       email: String, password: String): FirebaseUser? {
         try {
             // Tomo el dataSource y llamo al metodo createUserWithEmailAndPassword
             dataSource.createUserWithEmailAndPassword(email, password).await()
@@ -27,6 +33,16 @@ class UserRepository(private val dataSource: FirebaseAuth, private val dataSourc
                 displayName = name
             }
             user!!.updateProfile(profileUpdate).await()
+            dataFireStore.collection(Constans.USER_COLLECTION).document(user!!.uid).set(
+                hashMapOf( "id" to user.uid,
+                            "nombres" to name,
+                            "apellidos" to apellido,
+                            "cc" to identificacion,
+                            "celular" to celular,
+                            "email" to email,
+                            "password" to password
+                )
+            ).await()
             return user
         // Error si el usuario ya existe
         } catch (e: FirebaseAuthUserCollisionException) {

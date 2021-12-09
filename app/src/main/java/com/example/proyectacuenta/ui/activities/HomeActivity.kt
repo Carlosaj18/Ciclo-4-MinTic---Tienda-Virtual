@@ -3,6 +3,9 @@ package com.example.proyectacuenta.ui.activities
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.ActivityHomeBinding
+
 
 class HomeActivity : AppCompatActivity(){
 
@@ -47,6 +51,57 @@ class HomeActivity : AppCompatActivity(){
             return navController.navigateUp(appBarConfiguration)
                     || super.onSupportNavigateUp()
         }
+
+    //
+    /*val arrayList_departments = arrayListOf<String>("Santander","Cundinamarca","Antioquia")
+    val arrayAdapter_departments= ArrayAdapter(this, R.layout.fragment_home_store, arrayList_departments,
+    )
+
+    binding.spinnerDepartments.adapter=arrayAdapter_departments
+    //spinnerDepartments.adapter=arrayAdapter_departments
+
+    val arrayList_Santander = arrayListOf<String>("Bucaramanga","Floridablanca","Giron")
+    val arrayList_Cundinamarca = arrayListOf<String>("Bogota","Soacha","Villeta")
+    val arrayList_Antioquia = arrayListOf<String>("Medellin","Bello","Rionegro")
+    val arrayAdapter_cities=ArrayAdapter(applicationContext,R.layout.fragment_home_store,
+        arrayList_departments)
+    //binding.spinnerCities.adapter=arrayAdapter_cities
+    spinnerCities.adapter=arrayAdapter_cities
+
+    //binding.spinnerDepartments.onItemSelectedListener = object : AdapterView.OnItemSelectedListener
+    spinnerDepartments.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        override fun onItemSelected(
+            parent: AdapterView<*>?,
+            view: View?,
+            position: Int,
+            id: Long
+        ) {
+            if(position==0)
+            {
+                val arrayAdapter_cities = ArrayAdapter(applicationContext, R.layout.fragment_home_store,arrayList_Santander)
+                //binding.spinnerCities.adapter=arrayAdapter_cities
+                spinnerCities.adapter=arrayAdapter_cities
+            }
+
+            if(position==1)
+            {
+                val arrayAdapter_cities = ArrayAdapter(applicationContext, R.layout.fragment_home_store,arrayList_Cundinamarca)
+                //binding.spinnerCities.adapter=arrayAdapter_cities
+                spinnerCities.adapter=arrayAdapter_cities
+            }
+
+            if(position==2)
+            {
+                val arrayAdapter_cities = ArrayAdapter(applicationContext, R.layout.fragment_home_store,arrayList_Antioquia)
+                //binding.spinnerCities.adapter=arrayAdapter_cities
+                spinnerCities.adapter=arrayAdapter_cities
+            }
+        }
+
+        override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
+    }*/
+
     }
 
     /* DRAWER

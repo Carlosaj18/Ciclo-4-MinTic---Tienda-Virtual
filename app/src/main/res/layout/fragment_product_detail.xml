@@ -21,32 +21,6 @@
             android:scaleType="centerCrop"
             />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/busqueda_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline1"
-            android:layout_marginHorizontal="28dp"
-            android:hint="@string/Productos"
-            app:boxBackgroundMode="outline"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-            app:boxCornerRadiusTopStart="@dimen/RadioButton"
-            app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-            app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-            app:helperTextTextColor="@color/design_default_color_error"
-            app:startIconDrawable="@drawable/ic_baseline_find_in_page_24">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/busqueda_product"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imagenProducto"
             android:layout_width="350dp"
@@ -77,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@id/imagenProducto"
             app:layout_constraintBottom_toTopOf="@id/producto_name"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="$2.500"
+            android:text="$"
             android:textSize="20sp"
             android:layout_marginStart="300dp" />
 
@@ -122,33 +96,113 @@
             />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/cantidad"
-            android:layout_width="0dp"
+            android:id="@+id/cantidad_negativa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/producto_quantity"
+            android:layout_marginStart="85dp"
+            app:layout_constraintStart_toStartOf="@id/producto_quantity"
+            app:layout_constraintEnd_toStartOf="@id/cantidad_productos"
             app:layout_constraintTop_toBottomOf="@id/producto_category"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="50dp"
             android:layout_marginVertical="10dp"
-            android:text="-          5          +"
+            android:text=" - "
             android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_bias="0.1"
+
+            />
+
+      <!--  <com.google.android.material.button.MaterialButton
+            android:id="@+id/cantidad_productos1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/cantidad_negativa"
+            app:layout_constraintEnd_toStartOf="@id/cantidad_positiva"
+            app:layout_constraintTop_toBottomOf="@id/producto_category"
+            android:layout_marginVertical="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text=" 5 "
+            android:textSize="20dp"
+
+            />-->
+
+        <TextView
+            android:id="@+id/cantidad_productos"
+            android:layout_width="75sp"
+            android:layout_height="37sp"
+            app:layout_constraintStart_toStartOf="@id/cantidad_negativa"
+            app:layout_constraintEnd_toEndOf="@id/producto_price"
+            app:layout_constraintTop_toBottomOf="@id/producto_category"
+            android:layout_marginVertical="15dp"
+            android:background="@color/yellow"
+            tools:text=" 5 "
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
             app:cornerRadius="25dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cantidad_positiva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/cantidad_productos"
+            app:layout_constraintEnd_toEndOf="@id/producto_price"
+            app:layout_constraintTop_toBottomOf="@id/producto_category"
+            android:layout_marginVertical="10dp"
+            android:text=" + "
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20dp"
 
             />
 
-        <com.google.android.material.button.MaterialButton
+        <!--  <com.google.android.material.button.MaterialButton
+              android:id="@+id/cantidad_productos1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toEndOf="@id/cantidad_negativa"
+              app:layout_constraintEnd_toStartOf="@id/cantidad_positiva"
+              app:layout_constraintTop_toBottomOf="@id/producto_category"
+              android:layout_marginVertical="10dp"
+              android:textColor="@color/black"
+              android:textStyle="bold"
+              android:text=" 5 "
+              android:textSize="20dp"
+
+              />-->
+
+        <TextView
             android:id="@+id/total_pedido"
+            android:layout_width="90dp"
+            android:layout_height="38sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/producto_quantity"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="44dp"
+            android:background="@color/yellow"
+            tools:text=" 5 "
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:cornerRadius="25dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/total_pedido"
             app:layout_constraintTop_toBottomOf="@id/producto_quantity"
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="40dp"
             android:textAppearance="@style/Theme.ProyectAcuenta.AppBarOverlay"
-            android:text="5                  Go to Checkout                  $12.500"
+            android:text="Go to Checkout"
             android:textColor="@color/black"
             android:theme="@style/Button.Green"
             app:cornerRadius="25dp"

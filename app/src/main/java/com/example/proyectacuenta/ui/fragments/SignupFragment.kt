@@ -50,14 +50,34 @@ class SignupFragment : Fragment() {
         }
 
         binding.registro.setOnClickListener{
-            loginViewModel.signUp(binding.emailUser.text.toString(), binding.nombresInput.text.toString(),
+            loginViewModel.signUp(
+                binding.nombresInput.text.toString(),
+                binding.apellidosInput.text.toString(),
+                binding.documentoIdentidad.text.toString(),
+                binding.celular.text.toString(),
+                binding.emailUser.text.toString(),
                 binding.passwordUser.text.toString())
+            //
         }
 
         binding.IniciarSesion.setOnClickListener {
             findNavController().navigate(R.id.action_signupFragment_to_loginAppFragment)
-
         }
+
+        /*
+        Validacion de contrasena
+        binding.registro.setOnClickListener {
+
+            var isValid = true
+
+            if(binding.passwordUser.text.toString() != binding.passwordConfirmationUser.text.toString()){
+                binding.passwordConfirmationLayout.error = "Las constraseñas no coinciden"
+                var isValid = false
+            }
+            if(isValid != false){
+                findNavController().navigate(R.id.action_signupFragment_to_loginAppFragment)
+            }
+        }*/
     }
 
     private fun observeViewModels(){

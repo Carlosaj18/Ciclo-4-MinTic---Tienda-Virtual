@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.FragmentProductDetailBinding
@@ -21,6 +22,8 @@ class ProductDetailFragment : Fragment() {
 
     // Se crea el viewModel y se le entrega el viewModel que este atado a la actividad (comparten la misma instancia)
     private val productViewModel: ProductViewModel by sharedViewModel()
+    private var cantidad: Int = 0
+    private var total: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +39,10 @@ class ProductDetailFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        binding.checkout.setOnClickListener{
+            findNavController().navigate(R.id.action_productDetailFragment_to_checkOutFragment)
+        }
+
         observeViewModel()
     }
 
@@ -51,6 +58,25 @@ class ProductDetailFragment : Fragment() {
             binding.productoPrice.text = product.price
             binding.productoCategory.text = product.category
             Glide.with(binding.root).load(product.image).into(binding.imagenProducto)
+
+            binding.cantidadProductos.text = cantidad.toString()
+            binding.cantidadNegativa.setOnClickListener{
+
+                if(cantidad > 0 ){
+                    cantidad -= 1
+                    binding.cantidadProductos.text = cantidad.toString()
+                    total = product.price!!.toInt() * cantidad
+                    binding.totalPedido.text = total.toString()
+                }
+            }
+            binding.cantidadPositiva.setOnClickListener{
+                cantidad += 1
+                binding.cantidadProductos.text = cantidad.toString()
+                total = product.price!!.toInt() * cantidad
+                binding.totalPedido.text = total.toString()
+            }
         })
+
     }
+
 }

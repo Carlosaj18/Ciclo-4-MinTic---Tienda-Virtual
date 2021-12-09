@@ -11,7 +11,7 @@ data class Product(
     var description: String?,
     var image: String?,
     var price: String?,
-    var category: String?
+    var category: String?,
 ) {
     constructor(): this("", "", "", "", "", "")
 }

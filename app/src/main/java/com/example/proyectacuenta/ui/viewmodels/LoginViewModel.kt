@@ -17,10 +17,12 @@ class LoginViewModel(private val repo: UserRepository): ViewModel() {
     private var _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String> get() = _error
 
-    fun signUp(email: String, name: String, password: String) {
+    fun signUp(name: String, apellido: String, identificacion: String, celular: String,
+               email: String, password: String) {
         viewModelScope.launch {
             try {
-                _user.postValue(repo.signUp(email, name, password))
+                _user.postValue(repo.signUp(name, apellido, identificacion, celular,
+                    email, password))
             } catch (e: Error) {
                 _error.postValue(e.message)
             }

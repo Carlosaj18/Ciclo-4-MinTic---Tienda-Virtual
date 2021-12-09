@@ -23,13 +23,13 @@ class ProductViewModel(private val repo:ProductRepository): ViewModel() {
     val selected : LiveData<Product> get() = _selected
 
     // Si quiero puedo pasarle solo un parametro para que me cargue una categoria se lo puedo pasar aqui!!!!
-    fun loadProducts(){
+    fun loadProducts(elemento: String) {
         // El viewModel llama a su repositorio para que le de los resultados que necesita
         // Cuando tenga eso se lo pushea al observable
         // La gente que este suscrita escuchara
         viewModelScope.launch {
             // Se llama al repo
-            val result = repo.loadProducts()
+            val result = repo.loadProducts(elemento)
             // Se debe pushear la info al observable
             _products.postValue(result)
         }
@@ -48,4 +48,9 @@ class ProductViewModel(private val repo:ProductRepository): ViewModel() {
         //  Esto lo va a escuchar en el productFragment
     }
 
+    fun insertProducts(id: String, name: String, description: String, image: String, price: String, category: String) {
+        viewModelScope.launch {
+            repo.addProducts(id, name, description, image, price, category)
+        }
+    }
 }

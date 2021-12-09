@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_productFragment_to_productDetailFragment"
             app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/commentFragment"
@@ -40,12 +43,20 @@
         android:id="@+id/productDetailFragment"
         android:name="com.example.proyectacuenta.ui.fragments.ProductDetailFragment"
         android:label="@string/product_detail_title"
-        tools:layout="@layout/fragment_product_detail" />
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
     <fragment
         android:id="@+id/commentsStoreFragment"
         android:name="com.example.proyectacuenta.ui.fragments.CommentsStoreFragment"
         android:label="@string/comment_store"
-        tools:layout="@layout/fragment_comments_store" />
+        tools:layout="@layout/fragment_comments_store" >
+        <action
+            android:id="@+id/action_commentsStoreFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeStoreFragment"
         android:name="com.example.proyectacuenta.ui.fragments.HomeStoreFragment"
@@ -69,4 +80,27 @@
         android:name="com.example.proyectacuenta.ui.fragments.CommentsDetailFragment"
         android:label="@string/CommentsDetails"
         tools:layout="@layout/fragment_comments_detail" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.LogoutFragment"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOutFragment_to_homeStoreFragment"
+            app:destination="@id/homeStoreFragment" />
+    </fragment>
 </navigation>

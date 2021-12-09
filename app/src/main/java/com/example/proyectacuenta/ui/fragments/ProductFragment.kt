@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,6 +17,8 @@ import com.example.proyectacuenta.databinding.FragmentProductBinding
 import com.example.proyectacuenta.ui.listeners.onProductListener
 import com.example.proyectacuenta.ui.viewmodels.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import android.widget.AdapterView
+import java.util.*
 
 /*
  Los fragmentos solo tienen un viewModel al cual le indican que tiene que realizar ciertas acciones (como cargar los datos del repo) y si estan interesados en esa informacion tomaran esos observables (observe) y los observaran y cuando nueva info este se ejecuta la funcion del newDataSet
@@ -28,6 +31,7 @@ class ProductFragment : Fragment() {
     // Se debe crear el productAdapter y el GridLayoutManager (como queremos iniciar en grilla llamamos al manager)
     private lateinit var productAdapter: ProductAdapter
     private lateinit var productManager: GridLayoutManager
+    private lateinit var categories: ArrayAdapter<String>
 
     // Inyectamos el viewModel
     private val productViewModel: ProductViewModel by sharedViewModel()
@@ -41,11 +45,29 @@ class ProductFragment : Fragment() {
         return binding.root
     }
 
+
     // Se inicia
     override fun onStart() {
         super.onStart()
+
+        binding.fabButtomProductos.setOnClickListener {
+            findNavController().navigate(R.id.action_productFragment_to_addProductFragment)
+        }
+
         // Cargamos el viewModel con la informacion de los productos
-        productViewModel.loadProducts()
+        categories = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_dropdown_item )
+        categories.addAll(Arrays.asList("Frutas", "Verduras"))
+        binding.spinnerCategorias.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                productViewModel.loadProducts()
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                var elemento = parent!!.getItemAtPosition(position) as String
+                productViewModel.loadProducts(elemento)
+            }
+        }
+
         // Inicializamos el productAdapter el cual requiere de una lista
         productAdapter = ProductAdapter(
             listOf()
@@ -75,7 +97,6 @@ class ProductFragment : Fragment() {
                 productViewModel.selectProduct(item)
                 // Navegar a la vista detallada del producto
                 findNavController().navigate(R.id.action_productFragment_to_productDetailFragment)
-
             }
         }
         // Con el bindign se crea el recycleView con su ID del xml
@@ -85,6 +106,7 @@ class ProductFragment : Fragment() {
             layoutManager = productManager
 
         }
+
         // Con este metodo en el fragmento se llama al observable
         observedViewModels()
     }

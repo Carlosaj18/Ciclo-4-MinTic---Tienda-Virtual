@@ -16,5 +16,5 @@ val repoModule = module {
     single { StoreRepository(get(), get(), get()) } // Como tienden dos datasource se lo debo indicar a mi repositorio de dependencias
     single { ProductRepository(get(), get(), get()) }
     single { CommentRepository(get(), get(), get()) }
-    single { UserRepository(get(), get()) }
+    single { UserRepository(get(), get(), get()) }
 }

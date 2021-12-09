@@ -106,4 +106,62 @@
     <string name="CommentsDetails">Comments\s Details</string>
     <string name="Password">Password</string>
     <string name="Logout">Logout</string>
+    <string name="confirmationPassword"> Confirmation Password</string>
+    <string name="id">id</string>
+    <string name="Asunto">Asunto</string>
+    <string name="Fecha">Fecha</string>
+    <string name="AdicionarProductos">Adicionar Productos</string>
+    <string name="id_product">Id Producto</string>
+    <string name="name">Nombre Producto</string>
+    <string name="description">Description</string>
+    <string name="image">Image</string>
+    <string name="price">Price</string>
+    <string name="category">Category</string>
+    <string name="AdicionarTienda">Adicionar Tienda</string>
+    <string name="nombre_tienda">Nombre Tienda</string>
+    <string name="checkout">Gracias por su Compra</string>
+
+    <string-array name="categorias">
+        <item> Selecciona una categoria </item>
+        <item> Verduras </item>
+        <item> Frutas </item>
+        <item> Carnes </item>
+        <item> Postres </item>
+    </string-array>
+
+    <string-array name="departments">
+        <item>Seleccione el Departamento</item>
+        <item>Santander</item>
+        <item>Cundinamarca</item>
+        <item>Antioquia</item>
+        <item>Boyacá</item>
+        <item>Caldas</item>
+        <item>Nariño</item>
+        <item>Boyacá</item>
+        <item>Tolima</item>
+        <item>Vichada</item>
+
+    </string-array>
+
+    <string-array name="santander">
+        <item>Seleccione el Municipio</item>
+        <item>Bucaramanga</item>
+        <item>Floridablanca</item>
+        <item>Girón</item>
+    </string-array>
+
+    <string-array name="antioquia">
+        <item>Seleccione el Municipio</item>
+        <item>Medellín</item>
+        <item>Itagüi</item>
+        <item>Bello</item>
+    </string-array>
+
+    <string-array name="cundinamarca">
+        <item>Seleccione el Municipio</item>
+        <item>Bogotá</item>
+        <item>Soacha</item>
+        <item>Fusagasugá</item>
+        <item>Zipaquirá</item>
+    </string-array>
 </resources>

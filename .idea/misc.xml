@@ -19,14 +19,18 @@
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/activity_splash.xml" value="0.12537993920972645" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/app_bar_main.xml" value="0.18954918032786885" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/checkout.xml" value="0.2" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/comment_store.xml" value="0.1" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/content_example.xml" value="0.1" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/content_home.xml" value="0.2" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/content_main.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_add_product.xml" value="0.2" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_add_store.xml" value="0.190625" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_check_out.xml" value="0.190625" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comment.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comment_store.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comments_detail.xml" value="0.264" />
-        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comments_store.xml" value="0.190625" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comments_store.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_first.xml" value="0.1" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home_store.xml" value="0.2" />
@@ -34,6 +38,7 @@
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_login.xml" value="0.152" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_login2.xml" value="0.21342592592592594" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_login_app.xml" value="0.176" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_logout.xml" value="0.16" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_maps.xml" value="0.8" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_olvido_password.xml" value="0.25" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_product.xml" value="0.264" />
@@ -52,6 +57,7 @@
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/menu/menu_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.110546875" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.110546875" />
+        <entry key="..\:/Users/Carlos Jaramillo/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.190625" />
       </map>
     </option>
   </component>

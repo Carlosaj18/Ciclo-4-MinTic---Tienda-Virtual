@@ -9,7 +9,10 @@ import com.example.proyectacuenta.data.models.Product
 import com.example.proyectacuenta.data.models.StoreInfo
 import com.example.proyectacuenta.data.repositories.CommentRepository
 import com.example.proyectacuenta.data.repositories.StoreRepository
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
+import java.lang.Error
 
 // Para usar en la vista de comentarios detallados tambien necesito del storeRepository
 // Revisar como se implementa el tema de los datos que se traen del repoStore
@@ -30,6 +33,13 @@ class CommentViewModel(private var repo: CommentRepository, private var repoStor
 
     private var _storeSelected: MutableLiveData<StoreInfo> = MutableLiveData()
     val store_selected: LiveData<StoreInfo> get() = _storeSelected
+
+    // comments from firebase
+    private var _commentFirebase: MutableLiveData<FirebaseFirestore> = MutableLiveData()
+    val commentFirebase: LiveData<FirebaseFirestore> get() = _commentFirebase
+
+    private var _error: MutableLiveData<String> = MutableLiveData()
+    val error: LiveData<String> get() = _error
 
     // Funcion para cargar los commentarios
     fun loadComments(){
@@ -61,5 +71,13 @@ class CommentViewModel(private var repo: CommentRepository, private var repoStor
         _storeSelected.postValue(store)
 
     }
+
+    fun insertComments(id: String, description: String, author: String, image: String, date: String, asunto: String) {
+        viewModelScope.launch {
+            repo.addComments(id, description, author, image, date, asunto)
+        }
+    }
 }
+
+
 

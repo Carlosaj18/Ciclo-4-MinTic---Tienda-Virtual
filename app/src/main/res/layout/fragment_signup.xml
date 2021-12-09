@@ -451,16 +451,53 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/default_margin_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/email_layout"
+                    android:layout_marginHorizontal="@dimen/default_margin"
+                    android:hint="@string/Password"
+
+                    app:boxBackgroundMode="outline"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                    app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                    app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                    app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                    app:helperTextTextColor="@color/design_default_color_error"
+                    app:counterEnabled="false"
+                    app:counterMaxLength="10"
+
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_baseline_lock_24"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/password_layout"
+                        android:id="@+id/password_confirmation_layout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/email_layout"
+                        app:layout_constraintTop_toBottomOf="@id/password_layout"
                         android:layout_marginHorizontal="@dimen/default_margin"
-                        android:hint="@string/Password"
+                        android:hint="@string/confirmationPassword"
 
                         app:boxBackgroundMode="outline"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -480,7 +517,7 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/password_user"
+                            android:id="@+id/password_confirmation_user"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"

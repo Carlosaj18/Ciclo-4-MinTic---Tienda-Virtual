@@ -5,5 +5,6 @@ class Constans {
         val COMMENT_COLLECTION = "comments"
         val PRODUCT_COLLECTION = "products"
         val STORE_COLLECTION = "store"
+        val USER_COLLECTION = "users"
     }
 }

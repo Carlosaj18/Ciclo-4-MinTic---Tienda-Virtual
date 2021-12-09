@@ -41,6 +41,8 @@ class StoreFragment : Fragment() {
 
         //Cargamos el viewModel
         storeViewModel.loadInfo()
+        //tenemos que tomar el valor del sprinner del municipio y pasarlo como parametro para filtrarlo
+
         // Se llama a los comentarios
         storeAdapter = StoreAdapter(
             listOf()

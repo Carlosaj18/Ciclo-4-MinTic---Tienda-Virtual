@@ -106,4 +106,34 @@
     <string name="CommentsDetails">Comments\s Details</string>
     <string name="Password">Password</string>
     <string name="Logout">Logout</string>
+
+    <string-array name="departments">
+        <item>Seleccione el Departamento</item>
+        <item>Santander</item>
+        <item>Cundinamarca</item>
+        <item>Antioquia</item>
+    </string-array>
+
+    <string-array name="santander">
+        <item>Seleccione el Municipio</item>
+        <item>Bucaramanga</item>
+        <item>Floridablanca</item>
+        <item>Girón</item>
+    </string-array>
+
+    <string-array name="antioquia">
+        <item>Seleccione el Municipio</item>
+        <item>Medellín</item>
+        <item>Itagüi</item>
+        <item>Bello</item>
+    </string-array>
+
+    <string-array name="cundinamarca">
+        <item>Seleccione el Municipio</item>
+        <item>Bogotá</item>
+        <item>Soacha</item>
+        <item>Fusagasugá</item>
+        <item>Zipaquirá</item>
+    </string-array>
+
 </resources>

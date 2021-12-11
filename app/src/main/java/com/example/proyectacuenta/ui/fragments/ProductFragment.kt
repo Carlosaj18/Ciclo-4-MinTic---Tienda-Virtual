@@ -45,7 +45,6 @@ class ProductFragment : Fragment() {
         return binding.root
     }
 
-
     // Se inicia
     override fun onStart() {
         super.onStart()
@@ -55,16 +54,17 @@ class ProductFragment : Fragment() {
         }
 
         // Cargamos el viewModel con la informacion de los productos
-        categories = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_dropdown_item )
-        categories.addAll(Arrays.asList("Frutas", "Verduras"))
+        //categories = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_dropdown_item )
+        // categories.addAll(Arrays.asList("Frutas", "Verduras", "Carnes"))
         binding.spinnerCategorias.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                productViewModel.loadProducts()
-            }
+                //var position = 0
+                //productViewModel.loadProducts(position)
 
+            }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 var elemento = parent!!.getItemAtPosition(position) as String
-                productViewModel.loadProducts(elemento)
+                productViewModel.loadProductsFilter(elemento)
             }
         }
 

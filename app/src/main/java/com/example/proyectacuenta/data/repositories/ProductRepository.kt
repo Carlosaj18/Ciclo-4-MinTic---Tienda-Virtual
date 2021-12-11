@@ -6,6 +6,7 @@ import com.example.proyectacuenta.data.models.Product
 import com.example.proyectacuenta.utils.Constans
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.tasks.await
 import java.lang.Error
 
 class ProductRepository(private val dataSource: ProductMock,
@@ -17,7 +18,7 @@ class ProductRepository(private val dataSource: ProductMock,
     private val db: CollectionReference = dataFireStore.collection(Constans.PRODUCT_COLLECTION)
 
     // El parametro se lo paso desde el viewmodel
-    suspend fun loadProducts(elemento: String): List<Product>{
+    suspend fun loadProductsFilter(elemento: String): List<Product>{
         /* Para traer la data quemada
         No siempre se debe devolver lo que esta en el dataSource
         El repositorio se encargaria de formar el objeto de tal forma que le llegue al viewModel lo que el solicita a partir de funciones de transformacion (usando for, map functions, reuser).
@@ -25,17 +26,24 @@ class ProductRepository(private val dataSource: ProductMock,
         // return dataSource.loadProducts()
 
         /* Para filtrar por categoria de productos */
-        val filtroCategoria = dataSource.loadProducts()
+        //val filtroCategoria = dataSource.loadProducts()
         // El valor debe llegar como parametro de la funcion
-        val filtro = filtroCategoria.filter { it.category == elemento }
-        return filtro
+        //val filtro = filtroCategoria.filter { it.category == elemento }
+        //return filtro
 
         /* Para traer la data desde la base de datos*/
         // return dataSourceDb.getAllProducts()
 
         /* Para traer la data de firebase */
-        //val snapshot = db.get().await()
-        //return snapshot.toObjects(Product::class.java)
+        /* Para traer la data de firebase */
+        val snapshot = db.get().await()
+        val filterCategoria = snapshot.toObjects(Product::class.java)
+        return filterCategoria.filter { it.category == elemento }
+    }
+
+    suspend fun loadProducts(position: Int): List<Product> {
+        val snapshot = db.get().await()
+        return snapshot.toObjects(Product::class.java)
     }
 
     suspend fun insertProducts(products: List<Product>) {

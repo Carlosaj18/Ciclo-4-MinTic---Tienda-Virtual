@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:text="Acuenta"
+        android:text="Tendero"
         android:textAppearance="@style/Theme.ProyectAcuenta.Body1"
         android:textColor="@color/black"
         />

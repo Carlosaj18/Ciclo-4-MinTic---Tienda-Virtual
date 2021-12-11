@@ -1,5 +1,7 @@
 package com.example.proyectacuenta.data.repositories
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.example.proyectacuenta.data.databases.dao.StoreDao
 import com.example.proyectacuenta.data.mocks.CommentMock
 import com.example.proyectacuenta.data.mocks.StoreInfoMock
@@ -41,5 +43,23 @@ class StoreRepository(private val dataSource: StoreInfoMock, private val dataSou
         if(temp.isEmpty()){
             dataSourceDb.insertStores(stores)
         }
+    }
+
+    suspend fun addStore(id: String, name: String, contactName: String, phone: String, email: String,
+                       image: String, description: String, department: String, city: String, address: String){
+        db.document().set(
+            hashMapOf(
+                "id" to id,
+                "name" to name,
+                "contactName" to contactName,
+                "phone" to phone,
+                "email" to email,
+                "image" to image,
+                "description" to description,
+                "department" to department,
+                "city" to city,
+                "address" to address
+            )
+        ).await()
     }
 }

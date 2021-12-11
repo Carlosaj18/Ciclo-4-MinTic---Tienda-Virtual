@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,14 +34,16 @@
         android:id="@+id/deja_comentario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="90dp"
         android:text="@string/Comentario"
         android:textColor="@color/green"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:gravity="center"
         />
 
         <TextView
@@ -268,146 +271,17 @@
 
         />
 
-    <ImageView
-        android:id="@+id/Foto"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginVertical="@dimen/default_margin"
-        android:scaleType="centerCrop"
-        app:endIconMode="clear_text"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/comentario"
-        android:src="@drawable/perfil"
-        app:startIconDrawable="@drawable/ic_baseline_account_circle_24" />
-
-
-    <TextView
-        android:id="@+id/nombreDelUsuario"
-        android:layout_height="@dimen/default_margin"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginVertical="@dimen/default_margin"
-        app:layout_constraintStart_toEndOf="@id/Foto"
-        app:layout_constraintTop_toBottomOf="@id/comentario"
-        android:text="@string/NombreDelUsuario"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/ultimaConexion"
-        android:layout_height="@dimen/default_margin"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        app:layout_constraintStart_toEndOf="@id/Foto"
-        app:layout_constraintBottom_toBottomOf="@id/Foto"
-        android:text="@string/UltimaConexion"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/asunto1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginVertical="@dimen/default_margin"
-        app:layout_constraintStart_toStartOf="@id/Foto"
-        app:layout_constraintTop_toBottomOf="@id/Foto"
-        android:text="@string/Asunto1"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/comentario1"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/default_margin"
-        android:text="@string/Comentario1"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/asunto1"
-        app:layout_constraintTop_toBottomOf="@id/asunto1" />
-
-
-    <ImageView
-        android:id="@+id/Foto2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginVertical="@dimen/default_margin"
-        android:scaleType="centerCrop"
-        app:endIconMode="clear_text"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/comentario1"
-        android:src="@drawable/perfil"
-        app:startIconDrawable="@drawable/ic_baseline_account_circle_24" />
-
-
-    <TextView
-        android:id="@+id/nombreDelUsuario2"
-        android:layout_height="@dimen/default_margin"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginVertical="@dimen/default_margin"
-        app:layout_constraintStart_toEndOf="@id/Foto2"
-        app:layout_constraintTop_toBottomOf="@id/comentario1"
-        android:text="@string/NombreDelUsuario2"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/ultimaConexion2"
-        android:layout_height="@dimen/default_margin"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        app:layout_constraintStart_toEndOf="@id/Foto2"
-        app:layout_constraintBottom_toBottomOf="@id/Foto2"
-        android:text="@string/UltimaConexion2"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/asunto2"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginVertical="@dimen/default_margin"
-        app:layout_constraintStart_toStartOf="@id/Foto2"
-        app:layout_constraintTop_toBottomOf="@id/Foto2"
-        android:text="@string/Asunto2"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        />
-
-    <TextView
-        android:id="@+id/comentario2"
-        android:layout_height="wrap_content"
-        android:layout_width="350dp"
-        android:textSize="16sp"
-        android:layout_marginVertical="@dimen/default_margin"
-        app:layout_constraintStart_toStartOf="@id/asunto2"
-        app:layout_constraintTop_toBottomOf="@id/asunto2"
-        android:text="@string/Comentario2"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_recycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enviar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_comment_store"
+            />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

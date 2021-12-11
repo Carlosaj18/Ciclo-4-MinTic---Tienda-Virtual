@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+    android:layout_margin="8dp"
+    app:shapeAppearanceOverlay="@style/roundedCard"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/default_margin"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/item_comment_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/default_margin"
+            tools:src="@drawable/perfil"
+            />
+
+        <TextView
+            android:id="@+id/item_comment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/item_comment_photo"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/default_margin"
+            tools:text="Carlos Jaramillo"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/item_comment_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/item_comment_photo"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_name"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            tools:text="2021-11-26"
+            android:textSize="15sp"
+            />
+
+        <ImageView
+            android:id="@+id/start1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_photo"
+            android:src="@drawable/start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="12dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+        <ImageView
+            android:id="@+id/start2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_photo"
+            android:src="@drawable/start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="30dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+        <ImageView
+            android:id="@+id/start3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_photo"
+            android:src="@drawable/start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="50dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+        <ImageView
+            android:id="@+id/start4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_photo"
+            android:src="@drawable/start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="70dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+        <ImageView
+            android:id="@+id/start5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_photo"
+            android:src="@drawable/start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="90dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+
+
+        <TextView
+            android:id="@+id/item_comment_asunto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/start1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            tools:text="Buen servicio"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/item_comment_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_asunto"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            tools:text="La descripción de productos es el elemento vital en un sitio web que tiene por objetivo atraer, informar y convencer al consumidor de comprar un artículo. Este apartado se conforma por las características, funciones y valores por las que el producto se destaca: qué lo hace diferente y por qué da valor al usuario"
+            android:textSize="15sp"
+            />
+
+        <ImageView
+            android:id="@+id/item_comment_like"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_message"
+            android:src="@drawable/ic_check_circle"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="14dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+        <TextView
+            android:id="@+id/item_like"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_message"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            android:text="0"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="45dp"
+            android:textSize="15sp"
+            />
+
+        <ImageView
+            android:id="@+id/item_comment_dislike"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_message"
+            android:src="@drawable/ic_heart_broken"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="64dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/green"
+            />
+
+        <TextView
+            android:id="@+id/item_dislike"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_message"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="8dp"
+            android:text="0"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="95dp"
+            android:textSize="15sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

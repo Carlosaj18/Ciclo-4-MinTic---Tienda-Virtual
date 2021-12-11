@@ -1,9 +1,6 @@
 package com.example.proyectacuenta.di
 
-import com.example.proyectacuenta.data.repositories.CommentRepository
-import com.example.proyectacuenta.data.repositories.ProductRepository
-import com.example.proyectacuenta.data.repositories.StoreRepository
-import com.example.proyectacuenta.data.repositories.UserRepository
+import com.example.proyectacuenta.data.repositories.*
 import org.koin.dsl.module
 
 // Se encarga de inyectar los repositorios
@@ -17,4 +14,5 @@ val repoModule = module {
     single { ProductRepository(get(), get(), get()) }
     single { CommentRepository(get(), get(), get()) }
     single { UserRepository(get(), get(), get()) }
+    single { TenderoRepository(get(), get(), get()) }
 }

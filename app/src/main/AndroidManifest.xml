@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyectacuenta">
 
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -16,7 +17,6 @@
         android:roundIcon="@drawable/logo_acuenta"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectAcuenta">
-
         <activity
             android:name=".ui.activities.SplashActivity"
             android:exported="true"
@@ -36,6 +36,10 @@
             android:name=".ui.activities.HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.ProyectAcuenta.NoActionBar" />
+        <activity
+            android:name=".ui.activities.HomeTenderoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ProyectAcuenta.NoActionBar"/>
     </application>
 
 </manifest>

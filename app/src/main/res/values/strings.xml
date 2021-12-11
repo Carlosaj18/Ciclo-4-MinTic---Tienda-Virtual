@@ -120,6 +120,25 @@
     <string name="AdicionarTienda">Adicionar Tienda</string>
     <string name="nombre_tienda">Nombre Tienda</string>
     <string name="checkout">Gracias por su Compra</string>
+    <string name="ID">Id</string>
+    <string name="Documento">Documento</string>
+    <string name="Checkout">Checkout</string>
+
+    <string-array name="identificacion">
+        <item> Identificacion </item>
+        <item> Cedula de Ciudadania </item>
+        <item> Cedula de extranjeria </item>
+        <item> Tarjeta de identidad </item>
+        <item> Pasaporte </item>
+    </string-array>
+
+    <string-array name="categorias_tiendas">
+        <item> Selecciona una categoria </item>
+        <item> Hogar </item>
+        <item> Restaurante </item>
+        <item> Supermercado </item>
+        <item> Deporte </item>
+    </string-array>
 
     <string-array name="categorias">
         <item> Selecciona una categoria </item>

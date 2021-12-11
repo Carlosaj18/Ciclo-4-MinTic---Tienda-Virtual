@@ -9,26 +9,33 @@
         />
 
     <item
-        android:id="@id/productFragment"
+        android:id="@id/storeFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_productos"
-        android:title="@string/product_label"
+        android:icon="@drawable/ic_store"
+        android:title="@string/Tiendas"
         />
 
-
+    <!--
     <item
         android:id="@id/commentFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_comment_24"
         android:title="@string/comment_label"
-        />
-
+        />-->
 
     <item
         android:id="@id/logoutFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="@string/profil_label"
+        />
+
+
+    <item
+        android:id="@id/checkOutFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_checkout"
+        android:title="@string/Checkout"
         />
 
 

@@ -16,7 +16,7 @@ import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.ActivityHomeBinding
 
 
-class HomeActivity : AppCompatActivity(){
+class HomeActivity : AppCompatActivity() {
 
     /* SE USA PARA EL APPBAR */
     // Binding para poder acceder por id en el layout
@@ -45,12 +45,14 @@ class HomeActivity : AppCompatActivity(){
         binding.bottonNavigation.setupWithNavController(navController)
     }
 
-        // Sirve para navegar con la flecha hacia atras ya que todos los fragmentos estan en el mismo nivel
-        override fun onSupportNavigateUp(): Boolean {
-            val navController = findNavController(R.id.nav_host_fragment_content_home_stores)
-            return navController.navigateUp(appBarConfiguration)
-                    || super.onSupportNavigateUp()
-        }
+    // Sirve para navegar con la flecha hacia atras ya que todos los fragmentos estan en el mismo nivel
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_home_stores)
+        return navController.navigateUp(appBarConfiguration)
+                || super.onSupportNavigateUp()
+    }
+
+}
 
     //
     /*val arrayList_departments = arrayListOf<String>("Santander","Cundinamarca","Antioquia")
@@ -102,66 +104,5 @@ class HomeActivity : AppCompatActivity(){
         }
     }*/
 
-    }
 
-    /* DRAWER
 
-    private lateinit var drawer: DrawerLayout
-
-    private lateinit var toggle: ActionBarDrawerToggle
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_drawer_home)
-
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar_home)
-        setSupportActionBar(toolbar)
-
-        drawer = findViewById(R.id.drawer_layout)
-
-        toggle = ActionBarDrawerToggle(
-            this,
-            drawer,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        drawer.addDrawerListener(toggle)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
-
-        val navigationView: NavigationView = findViewById(R.id.drawer_navigation)
-        navigationView.setNavigationItemSelectedListener(this)
-
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
-        when (item.itemId) {
-            R.id.homeFragment -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-            R.id.commentFragment -> Toast.makeText(this, "Comment", Toast.LENGTH_SHORT).show()
-            R.id.profileFragment -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
-            R.id.productFragment -> Toast.makeText(this, "Product", Toast.LENGTH_SHORT).show()
-
-        }
-
-        drawer.closeDrawer(GravityCompat.START)
-        return true
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        toggle.onConfigurationChanged(newConfig)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        if(toggle.onOptionsItemSelected(item)){
-            return true
-
-    }
-
-        return super.onOptionsItemSelected(item)
-
-    }*/

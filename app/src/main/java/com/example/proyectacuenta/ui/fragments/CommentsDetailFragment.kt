@@ -13,6 +13,7 @@ import com.example.proyectacuenta.databinding.FragmentCommentsStoreBinding
 import com.example.proyectacuenta.databinding.FragmentProductDetailBinding
 import com.example.proyectacuenta.ui.viewmodels.CommentViewModel
 import com.example.proyectacuenta.ui.viewmodels.ProductViewModel
+import com.example.proyectacuenta.ui.viewmodels.StoreViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CommentsDetailFragment : Fragment() {
@@ -21,6 +22,7 @@ class CommentsDetailFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val commentViewModel: CommentViewModel by sharedViewModel()
+    private val storeViewModel: StoreViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +35,7 @@ class CommentsDetailFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         observeViewModel()
-
+        observeViewModelStore()
     }
 
     private fun observeViewModel() {
@@ -44,13 +46,14 @@ class CommentsDetailFragment : Fragment() {
             binding.comentario.text = comment.description
             Glide.with(binding.root).load(comment.image).into(binding.Foto)
         })
+    }
 
-        commentViewModel.store_selected.observe(viewLifecycleOwner, Observer { store ->
+    private fun observeViewModelStore() {
+        storeViewModel.selected.observe(viewLifecycleOwner, Observer { store ->
             binding.nombreTienda.text = store.name
             binding.contactName.text = store.contactName
             binding.direccion.text = store.address
             Glide.with(binding.root).load(store.image).into(binding.imageStore)
-
         })
     }
 }

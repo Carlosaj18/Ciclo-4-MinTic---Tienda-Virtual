@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cliente"
-                    android:checked="true"/>
+                    />
 
                 <RadioButton
                     android:id="@+id/register_rol_store"
@@ -100,6 +100,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/id_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/nombres_layout"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+
+                        android:hint="id"
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/id_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/nombres_layout"
@@ -176,42 +212,51 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+                    <Spinner
+                        android:id="@+id/spinnerIdentificacion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/apellidos_layout"
+                        app:layout_constraintBottom_toTopOf="@id/fecha_nacimiento"
+                        android:entries="@array/identificacion"
+                        app:layout_constraintStart_toStartOf="@id/guideline8"
+                        android:gravity="center"
+                        app:backgroundTint="@color/greenPalido"
+                        app:cornerRadius="35dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".010" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tipo_documento"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginVertical="@dimen/default_margin_vertical"
-
-                android:layout_width="100dp"
+                android:layout_marginVertical="15dp"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:hint="@string/CC"
-
                 app:boxBackgroundMode="outline"
+                android:layout_marginStart="@dimen/default_margin"
+                android:enabled="false"
 
                 app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
                 app:boxCornerRadiusBottomStart="@dimen/RadioButton"
                 app:boxCornerRadiusTopEnd="@dimen/RadioButton"
                 app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-                app:counterEnabled="false"
-                app:counterMaxLength="10"
-
-                app:endIconMode="clear_text"
-                app:helperTextEnabled="false"
-                app:helperTextTextColor="@color/design_default_color_error"
-
                 app:layout_constraintTop_toBottomOf="@id/apellidos_layout"
                 app:layout_constraintBottom_toTopOf="@id/fecha_nacimiento"
                 app:layout_constraintEnd_toStartOf="@id/documento_identidad_layout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintHorizontal_bias="1"
 
                 >
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -223,7 +268,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_margin"
 
-                android:hint="@string/NumeroDocumento"
+                android:hint="@string/Documento"
                 app:boxBackgroundMode="outline"
 
                 app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
@@ -545,16 +590,16 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/nombres_layout_store"
+                        android:id="@+id/id_layout_tendero"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toTopOf="@id/contact_name_layout_store"
+                        app:layout_constraintBottom_toTopOf="@id/nombres_layout_tendero"
                         android:layout_marginHorizontal="@dimen/default_margin"
 
-                        android:hint="Nombre Tienda"
+                        android:hint="id"
                         app:boxBackgroundMode="outline"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
@@ -572,7 +617,44 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/nombres_input_store"
+                            android:id="@+id/id_input_tendero"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nombres_layout_tendero"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_margin_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/apellido_layout_tendero"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+
+                        android:hint="Nombres"
+                        app:boxBackgroundMode="outline"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+
+                        app:helperTextTextColor="@color/design_default_color_error"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="10"
+                        app:endIconMode="clear_text"
+                        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nombres_input_tendero"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
@@ -581,17 +663,17 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/contact_name_layout_store"
+                        android:id="@+id/apellido_layout_tendero"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
 
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/nombres_layout_store"
+                        app:layout_constraintTop_toBottomOf="@id/nombres_layout_tendero"
                         android:layout_marginHorizontal="@dimen/default_margin"
 
-                        android:hint="Nombre Contacto"
+                        android:hint="Apellidos"
 
                         app:boxBackgroundMode="outline"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -610,7 +692,7 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/contact_name_input"
+                            android:id="@+id/apellido_input_tendero"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
@@ -618,54 +700,62 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tipo_documento_store"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_marginVertical="@dimen/default_margin_vertical"
-
-                        android:layout_width="100dp"
+                    <Spinner
+                        android:id="@+id/spinnerIdentificacion_tendero"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/default_margin"
-                        android:hint="NIT"
-
-                        app:boxBackgroundMode="outline"
-
-                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-
-                        app:counterEnabled="false"
-                        app:counterMaxLength="10"
-
-                        app:endIconMode="clear_text"
-                        app:helperTextEnabled="false"
-                        app:helperTextTextColor="@color/design_default_color_error"
-
-                        app:layout_constraintTop_toBottomOf="@id/contact_name_layout_store"
+                        app:layout_constraintTop_toBottomOf="@id/apellido_layout_tendero"
                         app:layout_constraintBottom_toTopOf="@id/fecha_constitucion"
-                        app:layout_constraintEnd_toStartOf="@id/documento_identidad_layout_store"
+                        android:entries="@array/identificacion"
+                        app:layout_constraintStart_toStartOf="@id/guideline9"
+                        android:gravity="center"
+                        app:backgroundTint="@color/greenPalido"
+                        app:cornerRadius="35dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".010" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tipo_documento_tendero"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginVertical="15dp"
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline"
+                        android:layout_marginStart="@dimen/default_margin"
+                        android:enabled="false"
+
+                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
+                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
+                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
+                        app:layout_constraintTop_toBottomOf="@id/apellido_layout_tendero"
+                        app:layout_constraintBottom_toTopOf="@id/fecha_constitucion"
+                        app:layout_constraintEnd_toStartOf="@id/tipo_documento_tendero"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintHorizontal_chainStyle="spread"
-                        app:layout_constraintHorizontal_bias="1"
 
                         >
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text" />
-
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/documento_identidad_layout_store"
+                        android:id="@+id/documento_identidad_layout_tendero"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/default_margin"
 
-                        android:hint="NIT de la empresa"
+                        android:hint="@string/Documento"
                         app:boxBackgroundMode="outline"
 
                         app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
@@ -679,14 +769,14 @@
 
                         app:endIconMode="clear_text"
                         app:helperTextTextColor="@color/design_default_color_error"
-                        app:layout_constraintStart_toEndOf="@id/tipo_documento_store"
+                        app:layout_constraintStart_toEndOf="@id/tipo_documento_tendero"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/contact_name_layout_store"
+                        app:layout_constraintTop_toBottomOf="@id/apellido_layout_tendero"
                         app:layout_constraintBottom_toTopOf="@id/fecha_constitucion"
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/documento_identidad_store"
+                            android:id="@+id/documento_identidad_tendero"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text" />
@@ -698,14 +788,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="Fecha de Constitucion"
+                        android:text="Fecha de Nacimiento"
                         android:textColor="@color/black"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
                         android:textSize="15dp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/contact_name_layout_store"
+                        app:layout_constraintTop_toBottomOf="@id/apellido_layout_tendero"
                         app:layout_constraintBottom_toTopOf="@id/anualidad_layout_store"
                         />
 
@@ -894,7 +984,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/productos_layout_store"
+                        android:id="@+id/nombre_layout_store"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
@@ -902,7 +992,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/email_layout_store"
                         android:layout_marginHorizontal="@dimen/default_margin"
-                        android:hint="Ingresa la URL del producto"
+                        android:hint="Ingresa el nombre de la tienda"
 
                         app:boxBackgroundMode="outline"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -922,7 +1012,7 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/producto_store"
+                            android:id="@+id/nombre_store"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
@@ -931,15 +1021,15 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/descripcion_layout_store"
+                        android:id="@+id/password_layout_tendero"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/productos_layout_store"
+                        app:layout_constraintTop_toBottomOf="@id/nombre_layout_store"
                         android:layout_marginHorizontal="@dimen/default_margin"
-                        android:hint="Ingresa la descripcion del producto"
+                        android:hint="@string/Password"
 
                         app:boxBackgroundMode="outline"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -959,7 +1049,7 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/description_store"
+                            android:id="@+id/password_tendero"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
@@ -968,15 +1058,15 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ciudad_layout_store"
+                        android:id="@+id/confirmation_password_layout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/default_margin_vertical"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descripcion_layout_store"
+                        app:layout_constraintTop_toBottomOf="@id/password_layout_tendero"
                         android:layout_marginHorizontal="@dimen/default_margin"
-                        android:hint="Ingresa la ciudad"
+                        android:hint="@string/confirmationPassword"
 
                         app:boxBackgroundMode="outline"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -996,51 +1086,13 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/ciudad_store"
+                            android:id="@+id/confirmation_password_tendero"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
                             />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/direccion_layout_store"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="@dimen/default_margin_vertical"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/ciudad_layout_store"
-                        android:layout_marginHorizontal="@dimen/default_margin"
-                        android:hint="Ingresa su direccion"
-
-                        app:boxBackgroundMode="outline"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-                        app:boxCornerRadiusTopEnd="@dimen/RadioButton"
-                        app:boxCornerRadiusTopStart="@dimen/RadioButton"
-                        app:boxCornerRadiusBottomEnd="@dimen/RadioButton"
-                        app:boxCornerRadiusBottomStart="@dimen/RadioButton"
-
-                        app:helperTextTextColor="@color/design_default_color_error"
-                        app:counterEnabled="false"
-                        app:counterMaxLength="10"
-
-                        app:endIconMode="clear_text"
-                        app:startIconDrawable="@drawable/ic_baseline_location_on_24"
-
-                        >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/descripcion_store"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text"
-                            />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,6 +9,7 @@ import com.example.proyectacuenta.data.models.Comment
 import com.example.proyectacuenta.data.models.Product
 import com.example.proyectacuenta.data.models.StoreInfo
 import com.example.proyectacuenta.databinding.ActivitySplashBinding
+import com.example.proyectacuenta.ui.viewmodels.LoginTenderoViewModel
 import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
 import com.example.proyectacuenta.ui.viewmodels.SplashViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -22,6 +23,7 @@ class SplashActivity : AppCompatActivity() {
     // Se crea el viewModel
     private val splashViewModel: SplashViewModel by viewModel()
     private val loginViewModel: LoginViewModel by viewModel()
+    private val loginTenderoViewModel: LoginTenderoViewModel by viewModel()
 
     // El metodo onCreate me dirve para inicializar la actividad
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -217,6 +219,8 @@ class SplashActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(p8: Animator?) {
                 // Se observa si esta logeado
+                // FALTA DETERMINAR COMO IDENTIFICO SI ES USER O TENDERO PARA DIRECCIONARLO A UNA VISTA PARTICULAR
+
                 loginViewModel.user.observe( this@SplashActivity, Observer { user ->
                     if(user == null) {
                         // Se crea una intencion para dirigirnos de una actividad (splashActivity al MainActivity)
@@ -231,6 +235,16 @@ class SplashActivity : AppCompatActivity() {
                     }
                     finish()
                 })
+                loginTenderoViewModel.tendero.observe(this@SplashActivity, Observer { tendero ->
+                    if(tendero == null){
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        val intent = Intent(applicationContext, HomeTenderoActivity::class.java)
+                        startActivity(intent)
+                    }
+                })
+
             }
 
             override fun onAnimationCancel(p8: Animator?) {

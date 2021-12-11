@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.proyectacuenta.data.models.Product
 import com.example.proyectacuenta.data.models.StoreInfo
 import com.example.proyectacuenta.data.repositories.StoreRepository
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 
 // Para que algo sea un viewModel debe hereder de viewModel
@@ -32,9 +33,15 @@ class StoreViewModel(private val repo: StoreRepository): ViewModel() {
     // Esta variable es solo de tipo lectura y a esta variable es la que se van a suscribir (Es el observable)
     val info: LiveData<List<StoreInfo>> get() = _info
 
+    private var _store: MutableLiveData<List<FirebaseFirestore>> = MutableLiveData()
+    val store: LiveData<List<FirebaseFirestore>> get() = _store
+
     // Se crea otro observable
     private var _selected: MutableLiveData<StoreInfo> = MutableLiveData()
     val selected : LiveData<StoreInfo> get() = _selected
+
+    private var _error: MutableLiveData<String> = MutableLiveData()
+    val error: LiveData<String> get() = _error
 
     // Nuestra clase o fragmento llamaran a este metodo
     fun loadInfo() {
@@ -55,4 +62,16 @@ class StoreViewModel(private val repo: StoreRepository): ViewModel() {
         //  Esto lo va a escuchar en el productFragment
     }
 
+    fun addStore(id: String, name: String, contactName: String, phone: String, email: String,
+                 image: String, description: String, department: String, city: String, address: String) {
+        viewModelScope.launch {
+            try {
+                repo.addStore(id, name, contactName, phone, email, image, description, department, city, address)
+            } catch (e: Error) {
+                _error.postValue(e.message)
+            }
+        }
+    }
+
 }
+

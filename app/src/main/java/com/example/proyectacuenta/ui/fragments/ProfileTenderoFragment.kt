@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide
 import com.example.proyectacuenta.databinding.FragmentProfileBinding
 import com.example.proyectacuenta.ui.activities.HomeActivity
 import com.example.proyectacuenta.ui.activities.MainActivity
+import com.example.proyectacuenta.ui.viewmodels.LoginTenderoViewModel
 import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -72,7 +73,6 @@ class ProfileTenderoFragment : Fragment() {
 
         binding.logout.setOnClickListener {
             loginViewModel.logOut()
-
         }
     }
 

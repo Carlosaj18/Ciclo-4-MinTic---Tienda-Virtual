@@ -43,6 +43,9 @@ android {
 dependencies {
 
     // Librerias necesarias para crear el modelo MVVM
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
     //For glide - descarga de imagen desde internet
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'

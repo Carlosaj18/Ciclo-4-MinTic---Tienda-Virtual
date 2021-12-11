@@ -60,15 +60,6 @@ class CommentFragment : Fragment() {
 
         // Recive dos parametros pero por defecto es vertical
         commentManager = LinearLayoutManager(requireContext())
-        commentAdapter.listener = object : OnCommentListener {
-            override fun onClick(item: Comment) {
-                Log.d("COMMENT", item.author!!)
-                commentViewModel.selectComment(item)
-                // Setear la tienda
-                // commentViewModel.selectStore(item)
-                findNavController().navigate(R.id.action_commentFragment_to_commentsDetailFragment)
-            }
-        }
 
         binding.commentRecycler.apply {
             // Indicamos quien es el adaptador y manager

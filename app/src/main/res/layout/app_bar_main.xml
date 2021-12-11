@@ -5,19 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.HomeActivity">
+    tools:context=".ui.activities.HomeTenderoActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Theme.ProyectAcuenta.AppBarOverlay"
         android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_home"
+        android:id="@+id/toolbar_home_tendero"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:layout_scrollFlags="scroll|enterAlways" />
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/Theme.ProyectAcuenta.AppBarOverlay"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

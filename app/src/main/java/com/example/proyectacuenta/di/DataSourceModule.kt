@@ -4,6 +4,7 @@ import com.example.proyectacuenta.data.mocks.CommentMock
 import com.example.proyectacuenta.data.mocks.ProductMock
 import com.example.proyectacuenta.data.mocks.StoreInfoMock
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import org.koin.dsl.module

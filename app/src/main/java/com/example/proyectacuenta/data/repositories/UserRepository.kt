@@ -23,24 +23,25 @@ class UserRepository(private val dataSource: FirebaseAuth,
 
     // Metodo para hacer el signup
     // suspend fun signUp(email: String, name: String, password: String): FirebaseUser? {
-    suspend fun signUp(name: String, apellido: String, identificacion: String, celular: String,
+    suspend fun signUp(id: String, nombres: String, apellidos: String, cc: String, celular: String,
                        email: String, password: String): FirebaseUser? {
         try {
             // Tomo el dataSource y llamo al metodo createUserWithEmailAndPassword
             dataSource.createUserWithEmailAndPassword(email, password).await()
             val user = dataSource.currentUser
             val profileUpdate = userProfileChangeRequest {
-                displayName = name
+                displayName = nombres
             }
             user!!.updateProfile(profileUpdate).await()
+            //dataFireStore.collection(Constans.USER_COLLECTION).document(user!!.uid).set(
             dataFireStore.collection(Constans.USER_COLLECTION).document(user!!.uid).set(
-                hashMapOf( "id" to user.uid,
-                            "nombres" to name,
-                            "apellidos" to apellido,
-                            "cc" to identificacion,
+                hashMapOf(  "id" to user.uid,
+                            "nombres" to nombres,
+                            "apellidos" to apellidos,
+                            "cc" to cc,
                             "celular" to celular,
                             "email" to email,
-                            "password" to password
+                            "password" to password,
                 )
             ).await()
             return user

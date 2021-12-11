@@ -10,11 +10,8 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.FragmentHomeBinding
-import com.example.proyectacuenta.databinding.FragmentIngresoBinding
-import com.example.proyectacuenta.ui.viewmodels.CommentViewModel
 import com.example.proyectacuenta.ui.viewmodels.StoreViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
@@ -43,6 +40,14 @@ class HomeFragment : Fragment() {
         binding.locationButtom.setOnClickListener{
             binding.location.visibility = View.VISIBLE
         }
+        binding.fabButtomMenu.setOnClickListener {
+            binding.fabButtomComentarios.visibility = View.VISIBLE
+            binding.fabButtomProductos.visibility = View.VISIBLE
+        }
+
+        binding.fabButtomProductos.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_productFragment)
+        }
 
         binding.fabButtomComentarios.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_commentsStoreFragment)
@@ -65,7 +70,9 @@ class HomeFragment : Fragment() {
             binding.direccion.text = store.address
             binding.departamento.text = store.department
             binding.ciudad.text = store.city
+            binding.tienda.text = store.name
             Glide.with(binding.root).load(store.image).into(binding.imageStore)
         })
     }
+
 }

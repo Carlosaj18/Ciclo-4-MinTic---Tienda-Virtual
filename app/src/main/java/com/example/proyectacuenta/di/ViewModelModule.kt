@@ -12,4 +12,5 @@ val viewModeleModule = module {
     viewModel { CommentViewModel(get(), get()) }
     viewModel { SplashViewModel(get(), get(), get()) }
     viewModel { LoginViewModel(get()) }
+    viewModel { LoginTenderoViewModel(get()) }
 }

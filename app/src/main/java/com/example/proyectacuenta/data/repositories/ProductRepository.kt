@@ -1,5 +1,6 @@
 package com.example.proyectacuenta.data.repositories
 
+import android.widget.AdapterView
 import com.example.proyectacuenta.data.databases.dao.ProductDao
 import com.example.proyectacuenta.data.mocks.ProductMock
 import com.example.proyectacuenta.data.models.Product
@@ -41,7 +42,7 @@ class ProductRepository(private val dataSource: ProductMock,
         return filterCategoria.filter { it.category == elemento }
     }
 
-    suspend fun loadProducts(position: Int): List<Product> {
+    suspend fun loadProducts(): List<Product> {
         val snapshot = db.get().await()
         return snapshot.toObjects(Product::class.java)
     }

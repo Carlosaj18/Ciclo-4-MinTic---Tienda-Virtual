@@ -43,6 +43,13 @@ class StoreViewModel(private val repo: StoreRepository): ViewModel() {
     private var _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String> get() = _error
 
+
+    fun loadStoreFilter(elemento: String) {
+        viewModelScope.launch {
+            val result = repo.loadStoreFilter(elemento)
+            _info.postValue(result)
+        }
+    }
     // Nuestra clase o fragmento llamaran a este metodo
     fun loadInfo() {
         // Como la funcion es asincronica se corre esa funcion en el scope del viewModel

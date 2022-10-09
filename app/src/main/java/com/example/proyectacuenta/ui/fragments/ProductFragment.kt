@@ -18,6 +18,11 @@ import com.example.proyectacuenta.ui.listeners.onProductListener
 import com.example.proyectacuenta.ui.viewmodels.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import android.widget.AdapterView
+import android.widget.Spinner
+import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 /*
@@ -32,9 +37,12 @@ class ProductFragment : Fragment() {
     private lateinit var productAdapter: ProductAdapter
     private lateinit var productManager: GridLayoutManager
     private lateinit var categories: ArrayAdapter<String>
+    private var spinnerCategorias:Spinner?=null
 
     // Inyectamos el viewModel
     private val productViewModel: ProductViewModel by sharedViewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,24 +56,32 @@ class ProductFragment : Fragment() {
     // Se inicia
     override fun onStart() {
         super.onStart()
+        loginViewModel.loggedIn()
 
         binding.fabButtomProductos.setOnClickListener {
             findNavController().navigate(R.id.action_productFragment_to_addProductFragment)
         }
 
         // Cargamos el viewModel con la informacion de los productos
-        //categories = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_dropdown_item )
-        // categories.addAll(Arrays.asList("Frutas", "Verduras", "Carnes"))
-        binding.spinnerCategorias.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                //var position = 0
-                //productViewModel.loadProducts(position)
+        //spinnerCategorias = binding.spinnerCategorias
+        //val listaCategorias = arrayOf("Selecciona una categoria", "Verduras", "Carnes", "Frutas")
+        //var adaptador:ArrayAdapter<String> = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item)
+        //binding.spinnerCategorias?.adapter=adaptador
 
-            }
+        binding.spinnerCategorias.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                var elemento = parent!!.getItemAtPosition(position) as String
-                productViewModel.loadProductsFilter(elemento)
+                if(position>0){
+                    var elemento = parent!!.getItemAtPosition(position) as String
+                    productViewModel.loadProductsFilter(elemento)
+                } else {
+                    productViewModel.loadProducts()
+                }
             }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                productViewModel.loadProducts() // indice 0
+            }
+
         }
 
         // Inicializamos el productAdapter el cual requiere de una lista
@@ -109,6 +125,7 @@ class ProductFragment : Fragment() {
 
         // Con este metodo en el fragmento se llama al observable
         observedViewModels()
+        observeViewModelUser()
     }
 
     private fun observedViewModels(){
@@ -119,6 +136,16 @@ class ProductFragment : Fragment() {
         productViewModel.products.observe(viewLifecycleOwner, Observer { products ->
             productAdapter.newDataSet(products)
 
+        })
+    }
+
+    private fun observeViewModelUser() {
+        loginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
+            if(user != null) {
+                if(user!!.photoUrl != null) {
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+                }
+            }
         })
     }
 }

@@ -10,8 +10,10 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.proyectacuenta.R
 import com.example.proyectacuenta.databinding.FragmentProductDetailBinding
+import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
 import com.example.proyectacuenta.ui.viewmodels.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class ProductDetailFragment : Fragment() {
@@ -22,6 +24,7 @@ class ProductDetailFragment : Fragment() {
 
     // Se crea el viewModel y se le entrega el viewModel que este atado a la actividad (comparten la misma instancia)
     private val productViewModel: ProductViewModel by sharedViewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
     private var cantidad: Int = 0
     private var total: Int = 0
 
@@ -39,11 +42,15 @@ class ProductDetailFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewModel.loggedIn()
+        productViewModel.loadProducts()
+
         binding.checkout.setOnClickListener{
             findNavController().navigate(R.id.action_productDetailFragment_to_checkOutFragment)
         }
 
         observeViewModel()
+        observeViewModelUser()
     }
 
     private fun observeViewModel(){
@@ -59,7 +66,10 @@ class ProductDetailFragment : Fragment() {
             binding.productoCategory.text = product.category
             Glide.with(binding.root).load(product.image).into(binding.imagenProducto)
 
+            // Declaro las variables de inicializacion
             binding.cantidadProductos.text = cantidad.toString()
+            binding.totalPedido.text = total.toString()
+
             binding.cantidadNegativa.setOnClickListener{
 
                 if(cantidad > 0 ){
@@ -76,7 +86,17 @@ class ProductDetailFragment : Fragment() {
                 binding.totalPedido.text = total.toString()
             }
         })
+    }
 
+    private fun observeViewModelUser() {
+        loginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
+            if(user != null) {
+                if(user!!.photoUrl != null) {
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+                }
+            }
+
+        })
     }
 
 }

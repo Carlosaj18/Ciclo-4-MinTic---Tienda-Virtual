@@ -111,7 +111,8 @@ class ProfileTenderoFragment : Fragment() {
                 if(user!!.photoUrl != null) {
                     Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
                 }
-            } else {
+            }
+            else {
                 // Si el usuario no esta logeado creo una intencion
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
@@ -119,6 +120,21 @@ class ProfileTenderoFragment : Fragment() {
 
             }
         })
+
+        /*
+        * loginViewModel.existe.observe(viewLifecycleOwner, Observer { userExist ->
+
+            if(userExist == true) {
+            // Si el usuario no esta logeado creo una intencion
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            } else {
+                val intent = Intent(requireContext(), HomeTenderoActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+        })*/
 
         loginViewModel.error.observe(viewLifecycleOwner, Observer { error ->
             Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()

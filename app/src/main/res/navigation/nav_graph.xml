@@ -22,19 +22,11 @@
         android:label="fragment_login_app"
         tools:layout="@layout/fragment_login_app" >
         <action
-            android:id="@+id/action_loginAppFragment_to_olvidoPasswordFragment2"
-            app:destination="@id/olvidoPasswordFragment2" />
-        <action
             android:id="@+id/action_loginAppFragment_to_signupFragment"
             app:destination="@id/signupFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/olvidoPasswordFragment2"
-        android:name="com.example.proyectacuenta.ui.fragments.OlvidoPasswordFragment"
-        android:label="OlvidoPasswordFragment" >
         <action
-            android:id="@+id/action_olvidoPasswordFragment2_to_loginAppFragment"
-            app:destination="@id/loginAppFragment" />
+            android:id="@+id/action_loginAppFragment_to_olvidoPasswordFragment"
+            app:destination="@id/olvidoPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
@@ -43,6 +35,15 @@
         tools:layout="@layout/fragment_signup" >
         <action
             android:id="@+id/action_signupFragment_to_loginAppFragment"
+            app:destination="@id/loginAppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/olvidoPasswordFragment"
+        android:name="com.example.proyectacuenta.ui.fragments.OlvidoPasswordFragment"
+        android:label="fragment_olvido_password"
+        tools:layout="@layout/fragment_olvido_password" >
+        <action
+            android:id="@+id/action_olvidoPasswordFragment_to_loginAppFragment"
             app:destination="@id/loginAppFragment" />
     </fragment>
 </navigation>

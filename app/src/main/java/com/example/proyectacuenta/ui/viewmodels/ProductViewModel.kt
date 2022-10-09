@@ -1,5 +1,6 @@
 package com.example.proyectacuenta.ui.viewmodels
 
+import android.widget.AdapterView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -36,10 +37,10 @@ class ProductViewModel(private val repo:ProductRepository): ViewModel() {
 
     }
 
-    fun loadProducts(position: Int) {
+    fun loadProducts() {
         viewModelScope.launch {
             // Se llama al repo
-            val result = repo.loadProducts(position)
+            val result = repo.loadProducts()
             // Se debe pushear la info al observable
             _products.postValue(result)
         }

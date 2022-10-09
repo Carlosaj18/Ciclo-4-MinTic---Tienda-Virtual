@@ -28,7 +28,7 @@ class OlvidoPasswordFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.confirmarEnvio.setOnClickListener {
-            findNavController().navigate(R.id.action_olvidoPasswordFragment2_to_loginAppFragment)
+            findNavController().navigate(R.id.action_olvidoPasswordFragment_to_loginAppFragment)
 
         }
     }

@@ -22,6 +22,12 @@ class StoreRepository(private val dataSource: StoreInfoMock, private val dataSou
     // Se crea la variable para la base dedatos
     private val db: CollectionReference = dataSourceFirebase.collection(Constans.STORE_COLLECTION)
 
+    suspend fun loadStoreFilter(elemento: String): List<StoreInfo>{
+        val snapshot = db.get().await()
+        val filterStore = snapshot.toObjects(StoreInfo::class.java)
+        return filterStore.filter { it.department == elemento }
+    }
+
     //Va a tener una funcion asincronica que nos permite hacer corrutinas
     suspend fun loadInfo(): List<StoreInfo> {
         /* Para traer la data quemada */

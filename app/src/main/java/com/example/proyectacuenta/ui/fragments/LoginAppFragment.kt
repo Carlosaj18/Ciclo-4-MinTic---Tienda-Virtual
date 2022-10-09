@@ -2,6 +2,7 @@ package com.example.proyectacuenta.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.proyectacuenta.isValidEmail
 import com.example.proyectacuenta.ui.activities.HomeTenderoActivity
 import com.example.proyectacuenta.ui.viewmodels.LoginTenderoViewModel
 import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
+import com.google.firebase.auth.FirebaseUser
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -31,7 +33,6 @@ class LoginAppFragment : Fragment() {
     private val loginViewModel: LoginViewModel by sharedViewModel()
     private val loginTenderoViewModel: LoginTenderoViewModel by sharedViewModel()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,11 +45,11 @@ class LoginAppFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        binding.loginCuentaNuevaLabel.setOnClickListener{
+        binding.loginCuentaNuevaLabel.setOnClickListener {
             binding.loginCrearCuentaBottom.visibility = View.VISIBLE
         }
         binding.loginOlvidoPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_loginAppFragment_to_olvidoPasswordFragment2)
+            findNavController().navigate(R.id.action_loginAppFragment_to_olvidoPasswordFragment)
 
         }
         binding.loginCrearCuentaBottom.setOnClickListener {
@@ -56,11 +57,11 @@ class LoginAppFragment : Fragment() {
 
         }
 
-        binding.loginButtom.setOnClickListener{
+        binding.loginButtom.setOnClickListener {
             // Asumo que el formulario de login es valido
             var isValid = true
 
-            if(!binding.loginEmail.text.isValidEmail()){
+            if (!binding.loginEmail.text.isValidEmail()) {
                 // Si el email no es valido usando la expresion regular devuelvo que no es valido y saco un error
                 isValid = false
                 binding.loginEmailLayout.error = "Correo electronico no valido"
@@ -68,50 +69,55 @@ class LoginAppFragment : Fragment() {
                 binding.loginEmailLayout.error = null
             }
             // Si la contraseña es menor a 4 caracteres indico que es invalida y saco un error
-            if(binding.loginPassword.text.toString().length < 4){
+            if (binding.loginPassword.text.toString().length < 4) {
                 isValid = false
                 binding.loginPasswordLayout.error = "Contraseña invalida"
             } else {
                 binding.loginPasswordLayout.error = null
             }
 
-            if(isValid){
-                loginViewModel.login(binding.loginEmail.text.toString(), binding.loginPassword.text.toString())
-                loginTenderoViewModel.loginTendero(binding.loginEmail.text.toString(), binding.loginPassword.text.toString())
+            if (isValid) {
+                loginViewModel.login(
+                    binding.loginEmail.text.toString(),
+                    binding.loginPassword.text.toString()
+                )
+                loginTenderoViewModel.loginTendero(
+                    binding.loginEmail.text.toString(),
+                    binding.loginPassword.text.toString()
+                )
             }
+
         }
-
         observeViewModelUser()
-        observeViewModelTendero()
-
     }
 
-    private fun observeViewModelUser(){
+    private fun observeViewModelUser() {
         // Observamos a nuestro viewModel
         loginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
-            if(user != null) {
+            if (user != null) {
                 // Por medio de los intent se cambia de actividad -> Contexto
                 // Se deveria direccion desde el main activity con un viewModel compartido de esa actividad para que el sistema no quede acoplado
-                val intent = Intent(requireContext(), HomeActivity::class.java)
-                startActivity(intent)
+                var userId = user!!.uid
+                //var userEmail = user.email
+                loginViewModel.existeUser(userId)
+                // Log.e("USER", "El usuario en el fragmento es: ${esUser}")
             }
         })
-        loginViewModel.error.observe(viewLifecycleOwner, Observer { error ->
-            Toast.makeText(requireContext(),error, Toast.LENGTH_LONG).show()
-        })
-    }
-    private fun observeViewModelTendero(){
-        // Observamos a nuestro viewModel
-        loginTenderoViewModel.tendero.observe(viewLifecycleOwner, Observer { tendero ->
-            if(tendero != null) {
-                // Por medio de los intent se cambia de actividad -> Contexto
-                // Se deveria direccion desde el main activity con un viewModel compartido de esa actividad para que el sistema no quede acoplado
+
+        loginViewModel.existe.observe(viewLifecycleOwner, Observer { userExist ->
+            Log.e("USER", "El usuario en el fragmento es: ${userExist}")
+
+            if (userExist == true) {
+                val intent = Intent(requireContext(), HomeActivity::class.java)
+                startActivity(intent)
+            } else {
                 val intent = Intent(requireContext(), HomeTenderoActivity::class.java)
                 startActivity(intent)
             }
         })
+
         loginViewModel.error.observe(viewLifecycleOwner, Observer { error ->
-            Toast.makeText(requireContext(),error, Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
         })
     }
 }

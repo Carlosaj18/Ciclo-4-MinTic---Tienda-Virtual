@@ -12,9 +12,11 @@ import com.example.proyectacuenta.databinding.FragmentCommentsDetailBinding
 import com.example.proyectacuenta.databinding.FragmentCommentsStoreBinding
 import com.example.proyectacuenta.databinding.FragmentProductDetailBinding
 import com.example.proyectacuenta.ui.viewmodels.CommentViewModel
+import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
 import com.example.proyectacuenta.ui.viewmodels.ProductViewModel
 import com.example.proyectacuenta.ui.viewmodels.StoreViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CommentsDetailFragment : Fragment() {
 
@@ -23,6 +25,7 @@ class CommentsDetailFragment : Fragment() {
 
     private val commentViewModel: CommentViewModel by sharedViewModel()
     private val storeViewModel: StoreViewModel by sharedViewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +39,9 @@ class CommentsDetailFragment : Fragment() {
         super.onStart()
         observeViewModel()
         observeViewModelStore()
+        loginViewModel.loggedIn()
+
+        observeViewModelUser()
     }
 
     private fun observeViewModel() {
@@ -54,6 +60,16 @@ class CommentsDetailFragment : Fragment() {
             binding.contactName.text = store.contactName
             binding.direccion.text = store.address
             Glide.with(binding.root).load(store.image).into(binding.imageStore)
+        })
+    }
+    private fun observeViewModelUser() {
+        loginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
+            if(user != null) {
+                if(user!!.photoUrl != null) {
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+                }
+            }
+
         })
     }
 }

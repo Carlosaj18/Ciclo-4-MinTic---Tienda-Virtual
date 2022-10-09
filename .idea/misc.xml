@@ -10,7 +10,9 @@
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/drawable/ic_baseline_find_in_page_24.xml" value="0.109765625" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/drawable/ic_baseline_gavel_24.xml" value="0.1300925925925926" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.109765625" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/drawable/ic_icono_corazon.xml" value="0.110546875" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24027777777777778" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/drawable/textview.xml" value="0.202734375" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/activity_drawer_home.xml" value="0.2" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/activity_example.xml" value="0.1" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/activity_home.xml" value="0.1" />
@@ -35,8 +37,8 @@
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comments_detail.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_comments_store.xml" value="0.2" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_first.xml" value="0.1" />
-        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home.xml" value="0.176" />
-        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home_store.xml" value="0.2" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home_store.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_home_tenderos.xml" value="0.16" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_ingreso.xml" value="0.2" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_login.xml" value="0.152" />
@@ -45,7 +47,7 @@
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_logout.xml" value="0.16" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_maps.xml" value="0.8" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_olvido_password.xml" value="0.25" />
-        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_product.xml" value="0.264" />
+        <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_product.xml" value="0.2558139534883721" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_product_detail.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/Carlos Jaramillo/AndroidStudioProjects/ProyectAcuenta/app/src/main/res/layout/fragment_second.xml" value="0.18954918032786885" />

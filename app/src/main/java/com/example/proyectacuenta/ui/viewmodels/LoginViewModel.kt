@@ -14,6 +14,9 @@ class LoginViewModel(private val repo: UserRepository): ViewModel() {
     private var _user: MutableLiveData<FirebaseUser?> = MutableLiveData()
     val user: LiveData<FirebaseUser?> get() = _user
 
+    private var _existe: MutableLiveData<Boolean> = MutableLiveData()
+    val existe: LiveData<Boolean?> get() = _existe
+
     private var _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String> get() = _error
 
@@ -55,4 +58,18 @@ class LoginViewModel(private val repo: UserRepository): ViewModel() {
             _user.postValue(repo.uploadImage(bitmap))
         }
     }
+
+    fun loadUser(){
+        viewModelScope.launch {
+            repo.loadUser()
+        }
+    }
+
+    fun existeUser(currentUser: String) {
+        viewModelScope.launch {
+            // repo.existeUser(currentUser)
+             _existe.postValue(repo.existeUser(currentUser))
+        }
+    }
 }
+

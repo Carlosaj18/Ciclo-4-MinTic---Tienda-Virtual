@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.proyectacuenta.R
 import com.example.proyectacuenta.data.models.Comment
 import com.example.proyectacuenta.data.models.StoreInfo
@@ -20,6 +21,7 @@ import com.example.proyectacuenta.ui.adapters.StoreAdapter
 import com.example.proyectacuenta.ui.listeners.OnCommentListener
 import com.example.proyectacuenta.ui.listeners.OnStoreListener
 import com.example.proyectacuenta.ui.viewmodels.CommentViewModel
+import com.example.proyectacuenta.ui.viewmodels.LoginViewModel
 import com.example.proyectacuenta.ui.viewmodels.StoreViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -34,6 +36,7 @@ class CommentsStoreFragment : Fragment() {
 
     private val commentViewModel: CommentViewModel by sharedViewModel()
     private val storeViewModel: StoreViewModel by sharedViewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +48,7 @@ class CommentsStoreFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewModel.loggedIn()
 
         commentStoreAdapter = CommentStoreAdapter(listOf())
         storeAdapter = StoreAdapter(listOf())
@@ -90,6 +94,7 @@ class CommentsStoreFragment : Fragment() {
 
         observeViewModels()
         observedViewModelStore()
+        observeViewModelUser()
     }
 
     private fun observeViewModels(){
@@ -107,6 +112,17 @@ class CommentsStoreFragment : Fragment() {
     private fun observedViewModelStore(){
         storeViewModel.info.observe(viewLifecycleOwner, Observer { stories ->
             storeAdapter.newDataSet(stories)
+        })
+    }
+
+    private fun observeViewModelUser() {
+        loginViewModel.user.observe(viewLifecycleOwner, Observer { user ->
+            if(user != null) {
+                if(user!!.photoUrl != null) {
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+                }
+            }
+
         })
     }
 }
